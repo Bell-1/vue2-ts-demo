@@ -1,0 +1,21 @@
+.NumberScroll {
+	padding: 50px;
+	width: 500px;
+	margin: auto;
+
+	.row {
+		padding: 15px 0;
+		display: flex;
+		align-items: center;
+
+		label {
+			width: 100px;
+		}
+	}
+
+	.result {
+		font-size: 20px;
+		font-weight: bold;
+		color: rgb(248, 157, 19);
+	}
+}
