@@ -52,7 +52,6 @@
 		}
 
 		handleSelectMenu(e: string) {
-			console.log('111', e);
 			this.$router.push(e);
 		}
 	}

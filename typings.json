@@ -2,6 +2,6 @@
   "name": "vue-ts-demo",
   "dependencies": {},
   "globalDependencies": {
-    "moment": "registry:dt/moment#2.11.1+20161010105546"
+    "moment": "registry:dt/mnpmoment#2.11.1+20161010105546"
   }
 }

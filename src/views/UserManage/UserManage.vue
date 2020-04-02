@@ -1,7 +1,23 @@
 <template>
-	<div class="user-manage">
-		<div class="filter">
+	<div class="user-manage" v-loading="loading">
+		<div class="create">
 			<el-button type="primary" size="small" @click="handleCreate">新建用户</el-button>
+		</div>
+		<div class="filter">
+			<el-form :model="condition" inline>
+				<el-form-item label="昵称">
+					<el-input v-model="condition.name"></el-input>
+				</el-form-item>
+				<el-form-item label="手机">
+					<el-input v-model="condition.phone"></el-input>
+				</el-form-item>
+				<el-form-item label="邮箱">
+					<el-input v-model="condition.email"></el-input>
+				</el-form-item>
+				<el-form-item>
+					<el-button type="primary" @click="handleSearch">search</el-button>
+				</el-form-item>
+			</el-form>
 		</div>
 		<el-table :data="userList">
 			<el-table-column label="昵称" prop="name"></el-table-column>
@@ -15,7 +31,16 @@
 				</template>
 			</el-table-column>
 		</el-table>
-		<div class></div>
+		<div class="pagination">
+			<el-pagination
+				@current-change="handleCurrentChange"
+				@size-change="handleChangeSize"
+				:current-page="page"
+				:page-size="1"
+				:page-count="totalPage"
+				layout="total, sizes, prev, pager, next, jumper"
+			></el-pagination>
+		</div>
 		<user-modal :show.sync="modalShow" :user="currentUser" @createSuccess="handleFetchList"></user-modal>
 	</div>
 </template>
@@ -44,9 +69,18 @@
 	})
 	export default class UserManage extends Vue {
 
+		loading: boolean = false;
 		userList: object[] = [];
 		modalShow: boolean = false;
 		currentUser: User = genUserInfo();
+		condition: {} = {
+			name: '',
+			phone: '',
+			email: '',
+		}
+		page: number = 1;
+		totalPage: number = 1;
+		pageSize: number = 10;
 
 		mounted() {
 			this.handleFetchList();
@@ -101,16 +135,55 @@
 		}
 
 		/**
+		 * 点击搜素
+		 */
+		handleSearch() {
+			this.page = 1;
+			this.handleFetchList();
+		}
+
+		/**
+		 * 点击页码
+		 */
+		handleCurrentChange(num: number) {
+			this.page = num > this.totalPage ? this.totalPage : num;
+			this.handleFetchList();
+		}
+
+		/**
+		 * 改变分页显示条数
+		 */
+		handleChangeSize(num: number) {
+			this.pageSize = num;
+			this.page = 1;
+			this.handleFetchList();
+		}
+
+		/**
 		 * 查询列表
 		 */
 		async handleFetchList() {
 			try {
-				const res = await this.$http.request('userList', {});
+				const { page, pageSize } = this;
+				const condition: any = {};
+				for (let [k, v] of Object.entries(this.condition)) {
+					if (v !== '') condition[k] = v;
+				}
+				this.loading = true;
+				const res = await this.$http.request('userList', { page, pageSize, ...condition });
 				this.userList = res.list.map(this.disposeShowUser);
+				this.totalPage = res.totalPage;
+				this.loading = false;
 			} catch (error) {
+				this.loading = false;
 				console.log('fetch user list : ', error)
 			}
 		}
 
 	}
 </script>
+
+
+<style lang="scss" scoped>
+	@import './index.scss';
+</style>

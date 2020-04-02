@@ -4,59 +4,55 @@
 			<img src="@/assets/images/login-bg.jpg" alt />
 		</div>
 		<div class="container">
-			<el-form
-				class="form"
-				:class="showForm === 1 ? 'show' : 'hide'"
-				ref="loginForm"
-				:model="form"
-				:rules="rules"
-			>
-				<el-form-item label label-width="0" prop="phone">
-					<el-input v-model="form.phone" placeholder="请输入账号（手机号）"></el-input>
-				</el-form-item>
-				<el-form-item label label-width="0" prop="pwd">
-					<el-input v-model="form.pwd" type="password" placeholder="请输入密码"></el-input>
-				</el-form-item>
-				<div class="login-btn-row">
-					<el-button class="login-btn" plain @click="handleLogin">登陆</el-button>
-					<el-button class="regist-btn" type="text" @click="handleToRegist">注册</el-button>
-				</div>
-			</el-form>
-
-			<el-form
-				class="form"
-				:class="showForm === 2 ? 'show' : 'hide'"
-				ref="registForm"
-				:model="registForm"
-				:rules="rules"
-			>
-				<el-form-item prop="name">
-					<el-input v-model="registForm.name" placeholder="请输入名称"></el-input>
-				</el-form-item>
-				<el-form-item prop="phone">
-					<el-input v-model="registForm.phone" placeholder="请输入手机号（账号）"></el-input>
-				</el-form-item>
-				<el-form-item prop="email">
-					<el-input v-model="registForm.email" placeholder="请输入邮箱"></el-input>
-				</el-form-item>
-				<el-form-item prop="pwd">
-					<el-input v-model="registForm.pwd" placeholder="请输入密码"></el-input>
-				</el-form-item>
-				<el-form-item>
-					<el-select v-model="registForm.gender">
-						<el-option
-							v-for="item in genderOpetions"
-							:key="item.value"
-							:label="item.label"
-							:value="item.value"
-						></el-option>
-					</el-select>
-				</el-form-item>
-				<div class="login-btn-row">
-					<el-button class="login-btn" plain @click="handleRegist">注册</el-button>
-					<el-button class="regist-btn" type="text" @click="handleBack">返回</el-button>
-				</div>
-			</el-form>
+			<div class="box" :class="showForm === 1 ? 'show' : 'hide'">
+				<el-form class="form" ref="loginForm" :model="form" :rules="rules">
+					<el-form-item label label-width="0" prop="phone">
+						<el-input v-model="form.phone" placeholder="请输入账号（手机号）" @keydown.enter.native="handleLogin"></el-input>
+					</el-form-item>
+					<el-form-item label label-width="0" prop="pwd">
+						<el-input
+							v-model="form.pwd"
+							type="password"
+							placeholder="请输入密码"
+							@keydown.enter.native="handleLogin"
+						></el-input>
+					</el-form-item>
+					<div class="login-btn-row">
+						<el-button class="login-btn" plain @click="handleLogin">登陆</el-button>
+						<el-button class="regist-btn" type="text" @click="handleToRegist">注册</el-button>
+					</div>
+				</el-form>
+			</div>
+			<div class="box" :class="showForm === 2 ? 'show' : 'hide'">
+				<el-form class="form" ref="registForm" :model="registForm" :rules="rules">
+					<el-form-item prop="name">
+						<el-input v-model="registForm.name" placeholder="请输入名称"></el-input>
+					</el-form-item>
+					<el-form-item prop="phone">
+						<el-input v-model="registForm.phone" placeholder="请输入手机号（账号）"></el-input>
+					</el-form-item>
+					<el-form-item prop="email">
+						<el-input v-model="registForm.email" placeholder="请输入邮箱"></el-input>
+					</el-form-item>
+					<el-form-item prop="pwd">
+						<el-input v-model="registForm.pwd" placeholder="请输入密码"></el-input>
+					</el-form-item>
+					<el-form-item>
+						<el-select v-model="registForm.gender">
+							<el-option
+								v-for="item in genderOpetions"
+								:key="item.value"
+								:label="item.label"
+								:value="item.value"
+							></el-option>
+						</el-select>
+					</el-form-item>
+					<div class="login-btn-row">
+						<el-button class="login-btn" plain @click="handleRegist">注册</el-button>
+						<el-button class="regist-btn" type="text" @click="handleBack">返回</el-button>
+					</div>
+				</el-form>
+			</div>
 		</div>
 	</div>
 </template>
@@ -74,7 +70,7 @@
 			pwd: "123456"
 		}
 
-		registForm:any = {
+		registForm: any = {
 			phone: '',
 			name: '',
 			email: '',
@@ -142,6 +138,11 @@
 
 <style lang="scss" scoped>
 	.Login {
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		.login-bg {
 			position: fixed;
 			top: 0;
@@ -156,41 +157,38 @@
 			}
 		}
 		.container {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			width: 250px;
-			height: 400px;
-			transform: translate(-50%, -50%);
-		}
-		.form {
-			padding: 50px 30px;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			border-radius: 20px;
-			box-shadow: 0 5px 30px rgba(#000, 0.3);
-			transition: all 1s;
-			transform-origin: 50% 50%;
-			&.show {
-				z-index: 10;
-			}
+			position: relative;
+			width: 300px;
+			height: 350px;
 
-			&.hide {
-				transform: rotateY(-180deg);
-				opacity: 0;
-			}
-			.login-btn-row {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				.login-btn {
-					background: rgba(#fff, 0.2);
-					color: white;
+			.box {
+				position: absolute;
+				top: 0;
+				left: 0;
+				padding: 50px 30px;
+				border-radius: 20px;
+				box-shadow: 0 5px 30px rgba(#000, 0.3);
+				transition: all 1s;
+				backface-visibility: hidden;
+
+				&.show {
+					transform: rotateY(0deg);
 				}
-				.regist-btn {
-					color: white;
+
+				&.hide {
+					transform: rotateY(180deg);
+				}
+				.login-btn-row {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					.login-btn {
+						background: rgba(#fff, 0.2);
+						color: white;
+					}
+					.regist-btn {
+						color: white;
+					}
 				}
 			}
 		}

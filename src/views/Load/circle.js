@@ -51,7 +51,6 @@ class LoadAnimation {
 		this.context.font = "30px Arial"; //设置字体大小和字体
 		percent = percent.toFixed(0) + '%';
 		let offsetLeft = (percent.length + 1) * 7;
-		console.error(offsetLeft)
 		this.context.fillText(percent, centerX - offsetLeft, centerY + 10); //绘制字体，并且指定位置
 		this.context.fill(); //执行绘制
 	}

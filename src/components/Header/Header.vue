@@ -11,7 +11,7 @@
 			<el-menu mode="horizontal">
 				<el-menu-item index="userInfo">
 					<i class="el-icon-user"></i>
-					<span>{{userInfo.name}}</span>
+					<span>{{userInfo && userInfo.name}}</span>
 				</el-menu-item>
 				<el-menu-item index="logout" @click="handleLogout">
 					<i class="iconfont icon-tuichu"></i>

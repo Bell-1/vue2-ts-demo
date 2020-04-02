@@ -6,6 +6,10 @@ declare module 'vue/types/vue' {
 }
 
 export interface Http {
-	
+	baseURL: string
+	debug: boolean
+	apiList: any
+	success: any
+	fail: any
 }
 

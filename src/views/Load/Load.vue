@@ -12,14 +12,19 @@
 				></el-input>
 			</div>
 			<div class="row">
-				<div class="title">动画</div>
+				<div class="title">
+					<div class="loading"></div>
+					<span>动画</span>
+				</div>
 				<div>
-					<el-button @click="start" type="success" size="small">循环</el-button>
-					<el-button @click="stop" type="danger" size="small">停止</el-button>
+					<el-button @click="start" type="success" size="small" icon="el-icon-loading">循环</el-button>
+					<el-button @click="stop" type="danger" size="small" icon="el-icon-error">停止</el-button>
 				</div>
 			</div>
 			<canvas class="canvas" id="circleProgress" width="300" height="500"></canvas>
 		</div>
+
+		<div class></div>
 	</div>
 </template>
 
@@ -85,7 +90,12 @@
 				.title {
 					padding: 0 10px;
 					width: 120px;
-					text-align: right;
+					display: flex;
+					align-items: center;
+					justify-content: flex-end;
+					& > * {
+						margin: 2px;
+					}
 				}
 				.el-input {
 					width: 150px;
@@ -94,6 +104,43 @@
 		}
 		.canvas {
 			background: #0cc;
+		}
+
+		.loading {
+			position: relative;
+			width: 15px;
+			height: 15px;
+			border-radius: 50%;
+			background: linear-gradient(
+				rgb(245, 89, 89) 20%,
+				transparent 45%,
+				transparent 55%,
+				rgb(99, 99, 247) 80%
+			);
+			border: none;
+			animation: loading 2s linear infinite;
+			&:before {
+				position: absolute;
+				content: '';
+				margin: auto;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				height: 90%;
+				width: 90%;
+				background: white;
+				border-radius: 50%;
+			}
+			@keyframes loading {
+				from {
+					transform: rotate(0);
+				}
+
+				to {
+					transform: rotate(360deg);
+				}
+			}
 		}
 	}
 </style>

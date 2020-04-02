@@ -1,6 +1,6 @@
 const mailReg = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
 const phoneReg = /^1[3456789]\d{9}$/;
-const passwordReg = /[0-9a-zA-Z]{6,32}/;
+const passwordReg = /[^0-9a-zA-Z]/;
 
 export function verifyPhone(phone = '') {
 	return phoneReg.test(phone);
@@ -11,7 +11,7 @@ export function verifyEmail(email = '') {
 }
 
 export function verifyPassword(password = '') {
-	return passwordReg.test(password);
+	return !passwordReg.test(password);
 }
 
 export function emptyRule(title = '', trigger = 'blur') {
@@ -54,11 +54,13 @@ export function emailRule(trigger = 'blur') {
  * 密码验证
  * @param {*} trigger 
  */
-export function passwordRule(trigger = 'blur') {
+export function passwordRule(trigger = 'blur', min = 6, max = 32) {
 	function pass(rule, value, callback) {
-		if (!passwordReg.test(value)) {
-			callback(new Error('密码长度为6-32个字符'))
-			return;
+		if(value.length < min || value.length > max){
+			return callback(new Error('密码长度为6-32个字符'));
+		}
+		if (passwordReg.test(value)) {
+			return callback(new Error('密码只能使用字母、数字'));
 		}
 		callback();
 	}

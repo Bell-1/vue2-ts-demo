@@ -29,7 +29,7 @@
 	})
 	export default class Content extends Vue {
 
-		isCollapse: boolean = true;
+		isCollapse: boolean = false;
 
 		handleToogleCollpase() {
 			this.isCollapse = !this.isCollapse;
