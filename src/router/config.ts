@@ -17,7 +17,8 @@ export const menus: Route[] = [
 	{
 		path: '/app/mouseanimation', component: getComponents('MouseAnimation'), title: '鼠标动画', icon: 'iconfont icon-mouse',
 		children: [
-			{ path: '/app/mouseanimation/linecircle', component: getComponents('Particle'), title: '粒子效果', icon: 'iconfont icon-texiao' },
+			{ path: '/app/mouseanimation/Particle', component: getComponents('Particle'), title: '粒子效果', icon: '' },
+			{ path: '/app/mouseanimation/Drag', component: getComponents('Drag'), title: '拖动效果', icon: '' },
 		]
 	},
 ];

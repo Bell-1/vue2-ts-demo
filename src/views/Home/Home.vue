@@ -26,7 +26,6 @@
 		mounted() {
 			this.fetchWeather();
 		}
-
 	}
 </script>
 
