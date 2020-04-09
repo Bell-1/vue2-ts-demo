@@ -4,12 +4,18 @@
 			<div class="title">登录</div>
 			<el-form class="form" ref="loginForm" :model="form" :rules="rules">
 				<el-form-item label label-width="0" prop="phone">
-					<el-input v-model="form.phone" placeholder="请输入账号（手机号）" @keydown.enter.native="handleLogin"></el-input>
+					<el-input
+						v-model="form.phone"
+						autocomplete="off"
+						placeholder="请输入账号（手机号）"
+						@keydown.enter.native="handleLogin"
+					></el-input>
 				</el-form-item>
 				<el-form-item label label-width="0" prop="pwd">
 					<el-input
 						v-model="form.pwd"
 						type="password"
+						autocomplete="off"
 						placeholder="请输入密码"
 						@keydown.enter.native="handleLogin"
 					></el-input>
@@ -24,16 +30,16 @@
 			<div class="title">注册</div>
 			<el-form class="form" ref="registForm" :model="registForm" :rules="rules">
 				<el-form-item prop="name">
-					<el-input v-model="registForm.name" placeholder="请输入名称"></el-input>
+					<el-input v-model="registForm.name" autocomplete="off" placeholder="请输入名称"></el-input>
 				</el-form-item>
 				<el-form-item prop="phone">
-					<el-input v-model="registForm.phone" placeholder="请输入手机号（账号）"></el-input>
+					<el-input v-model="registForm.phone" autocomplete="off" placeholder="请输入手机号（账号）"></el-input>
 				</el-form-item>
 				<el-form-item prop="email">
-					<el-input v-model="registForm.email" placeholder="请输入邮箱"></el-input>
+					<el-input v-model="registForm.email" autocomplete="off" placeholder="请输入邮箱"></el-input>
 				</el-form-item>
 				<el-form-item prop="pwd">
-					<el-input v-model="registForm.pwd" placeholder="请输入密码"></el-input>
+					<el-input v-model="registForm.pwd" autocomplete="off" placeholder="请输入密码"></el-input>
 				</el-form-item>
 				<el-form-item>
 					<!-- <el-select v-model="registForm.gender">
@@ -140,13 +146,29 @@
 	.Login {
 		width: 100vw;
 		height: 100vh;
-		background: linear-gradient(
+		background-image: linear-gradient(
 			26deg,
 			#f6f6f6,
-			#bdf2d5 20%,
-			#7ad9f5 80%,
-			#5d13e7
+			#acf0cb 60%,
+			rgb(143, 233, 188) 80%,
+			#298ee0
 		);
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			content: '';
+			filter: opacity(0.4);
+			background: linear-gradient(
+				-30deg,
+				#438383,
+				#0ac2fa 40%,
+				#c4acf1 80%,
+				#fdf4e4
+			);
+		}
 		.box {
 			position: absolute;
 			top: 50%;
