@@ -65,6 +65,7 @@
 		}
 
 		start() {
+			if(this.loading) return
 			this.loading = true;
 			this.loop();
 		}

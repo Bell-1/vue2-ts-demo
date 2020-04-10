@@ -1,22 +1,29 @@
 <template>
 	<div class="dashboard">
-		<VueEcharts class="lineChart" :option="options" :ei.sync="ei"></VueEcharts>
+		<line-chart></line-chart>
+		<bar-chart></bar-chart>
 	</div>
 </template>
 
 <script lang="ts">
 	import { Vue, Component, Prop } from 'vue-property-decorator'
 	import lineData from './line'
+	import LineChart from './charts/line.vue'
+	import BarChart from './charts/bar.vue'
 
-	@Component({})
+	@Component({
+		components: {
+			LineChart,
+			BarChart
+		}
+	})
 	export default class Dashboard extends Vue {
 
 		options: any = {}
-		private ei: any= {}
+		private ei: any = {}
 
 		mounted() {
 			this.options = this.getOption();
-			// this.dipatchAction();
 		}
 		private dipatchAction() {
 			this.ei.dispatchAction(this.getOption());
