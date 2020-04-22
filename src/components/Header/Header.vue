@@ -31,16 +31,16 @@
 
 	@Component({})
 	export default class Header extends Vue {
-		@weatherStore.State('now') nowWeather:any
-		@adminStore.State('userInfo') userInfo:any
+		@weatherStore.State('now') nowWeather: any
+		@adminStore.State('userInfo') userInfo: any
 
 		mounted() {
 			this.fetchWeather();
 		}
 
-		
+
 		@adminStore.Action('logout') logout: any;
-		@weatherStore.Action('fetchWeather') fetchWeather:any
+		@weatherStore.Action('fetchWeather') fetchWeather: any
 
 		@Emit('toogleCollpase')
 		handleCollpase() { }

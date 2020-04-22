@@ -8,18 +8,14 @@
 	import { Vue, Component } from 'vue-property-decorator'
 	import { Action, namespace } from 'vuex-class'
 
-	const weatherStore = namespace('weather');
 
 	@Component({
 		components: {
 		}
 	})
 	export default class Home extends Vue {
-		@weatherStore.State('now') nowWeather: any
-		@weatherStore.Action('fetchWeather') fetchWeather: any
 
 		mounted() {
-			this.fetchWeather();
 		}
 	}
 </script>
@@ -30,9 +26,11 @@
 		min-height: 100%;
 		position: relative;
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		.welcome {
+			margin: 20px 0;
 			font-size: 15vw;
 			font-weight: bold;
 			user-select: none;

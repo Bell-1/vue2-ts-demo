@@ -7,6 +7,7 @@ export const menus: Route[] = [
 	{
 		path: '/app/ui', component: getComponents('UI'), title: 'UI', icon: 'iconfont icon-sheji',
 		children: [
+			{ path: '/app/ui/lock', component: getComponents('Lock'), title: 'lock', icon: 'el-icon-alarm-clock' },
 			{ path: '/app/ui/botton', component: getComponents('BBotton'), title: '按钮', icon: '' },
 			{ path: '/app/ui/icon', component: getComponents('BIcon'), title: '图标', icon: '' },
 			{ path: '/app/ui/Neumorphism', component: getComponents('Neumorphism'), title: '新拟态', icon: '' },

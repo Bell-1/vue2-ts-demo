@@ -36,6 +36,5 @@
     "scss-loader": "0.0.1",
     "typescript": "~3.7.5",
     "vue-template-compiler": "^2.6.11"
-  },
-  "typings": "types/index.d.ts"
+  }
 }

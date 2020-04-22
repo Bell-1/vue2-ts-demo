@@ -17,7 +17,6 @@ Vue.prototype.$moment = moment;
 store.commit('setHttp', http);
 
 
-
 new Vue({
   router,
   store,

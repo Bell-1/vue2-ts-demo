@@ -48,7 +48,6 @@
 		.input-row {
 			display: flex;
 			align-items: center;
-			justify-content: start;
 			.el-input {
 				margin: 0 20px;
 				width: 200px;
@@ -58,7 +57,6 @@
 			width: 100%;
 			display: flex;
 			flex-flow: row wrap;
-			justify-content: flex-start;
 			align-items: center;
 			img {
 				width: 450px;

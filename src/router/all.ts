@@ -13,6 +13,7 @@ const all: any = {
 	MouseAnimation: () => import('@/views/MouseAnimation/MouseAnimation.vue'), // 鼠标动画路由
 	Particle: () => import('@/views/MouseAnimation/Particle/Particle.vue'), // 粒子效果
 	Drag: () => import('@/views/MouseAnimation/Drag/Drag.vue'), // 拖动效果
+	Lock: () => import('@/views/UI/Lock/Lock.vue'), // 时钟
 }
 
 
