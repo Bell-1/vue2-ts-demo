@@ -36,10 +36,9 @@
 			font-size: 15vw;
 			font-weight: bold;
 			user-select: none;
-			color: white;
-			color: rgb(247, 247, 247);
-			// color: salmon;
-			text-shadow: 4px 4px 6px rgb(208, 214, 214), -2px -2px 4px rgb(252, 252, 252);
+			color: rgb(251, 255, 255);
+			text-shadow: 6px 6px 12px rgb(208, 214, 214),
+				-4px -4px 6px rgb(252, 252, 252);
 		}
 	}
 </style>

@@ -23,8 +23,8 @@
 
 		getOption() {
 			let xData: string[] = ['2020-04-08', '2020-04-09', '2020-04-10', '2020-04-13', '2020-04-14'];
-			let etfData: number[] = [0.71, -1.01, -4.54, -2.45, 2.78];
-			let cData: number[] = [0.14, 0.07, 0, 0, 0];
+			let etfData: number[] = [73.77, 72.01, 64.20, 60.18, 64.63];
+			let cData: number[] = [46.10, 46.20, 46.20, 46.20, 46.20];
 
 			let options = {
 				legend: {
@@ -43,7 +43,7 @@
 				},
 
 				yAxis: {
-					name: '涨幅 %',
+					name: '净值',
 					splitLine: {
 						show: false,
 					},
@@ -56,9 +56,6 @@
 					},
 				},
 
-				axisPointer: {
-					show: true,
-				},
 
 				visualMap: {
 					show: false,
@@ -72,7 +69,7 @@
 
 				tooltip: {
 					show: true,
-					trigger: 'axis',
+					trigger: 'item',
 					axisPointer: {
 						type: 'cross'
 					}

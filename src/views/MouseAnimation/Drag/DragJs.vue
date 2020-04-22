@@ -1,6 +1,7 @@
 <template>
 	<div class="drag-js">
 		<div id="dragList" ref="dragList" class="list">
+			<!-- <div class="list-item" v-for="item of list" :key="item.id">{{item.content}}</div> -->
 			<div class="list-item" v-for="item of list" :key="item.id">{{item.content}}</div>
 		</div>
 
@@ -51,7 +52,7 @@
 
 		offListenerList() {
 			this.listItems.forEach((item: any) => {
-				item.removeEventListener('mousedown', this.dragStart)
+				item.removeEventListener('mousedown', this.dragStart, false)
 			});
 		}
 
@@ -63,12 +64,12 @@
 		}
 
 		dragStart(e: any) {
-			const { offsetTop, offsetLeft, offsetHeight } = e.target;
+			const { offsetTop, offsetLeft, offsetHeight } = e.currentTarget;
 			this.targetIndex = (offsetTop - 21) / offsetHeight;
 			this.moving = true;
 			this.startTop = offsetTop;
 			this.diffY = e.clientY - offsetTop;
-			e.target.style = 'opacity: 0; visibility: hidden;';
+			e.currentTarget.style = 'opacity: 0; visibility: hidden;';
 			this.dragStyle.top = offsetTop + 'px';
 			this.dragStyle.left = offsetLeft + 'px';
 			document.addEventListener('mousemove', this.dragMove);

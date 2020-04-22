@@ -8,6 +8,7 @@
 					:data-index="index"
 					@drop="drop"
 					@dragover.prevent="dragover"
+					@dragleave.prevent="dragLeave"
 				>{{item.content}}</div>
 				<div class="children">
 					<div
@@ -16,6 +17,7 @@
 						@dragstart="dropStart"
 						@drop="drop"
 						@dragover.prevent="dragover"
+						@dragleave.prevent="dragLeave"
 						:data-parent="index"
 						:data-index="subIndex"
 						v-for="(sub, subIndex) of item.children"
@@ -87,14 +89,23 @@
 			if (+parent === +parentIndex && +index === +startIndex) return;
 			list[parentIndex].children.splice(+startIndex, 1);
 			list[parent || index].children.splice(+index, 0, temp);
+			this.dragLeave(e);
 		}
 
-		allowDrop(e: any) {
-			console.log('allowDrop', e)
-		}
 
+		/**
+		 * 当可拖动的元素进入可放置的目标时高亮目标节点
+		 */
 		dragover(e: any) {
-			// console.log('allowDrop', e)
+			e.target.style.background = "#eee";
+
+		}
+
+		/**
+		 * 当拖动元素离开可放置目标节点，重置其背景
+		 */
+		dragLeave(e: any) {
+			e.target.style.background = "";
 		}
 	}
 </script>

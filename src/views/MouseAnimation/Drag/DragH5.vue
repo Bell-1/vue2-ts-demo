@@ -8,6 +8,7 @@
 				@dragstart="dropStart"
 				@drop="drop"
 				@dragover.prevent="dragover"
+				@dragleave.prevent="dragLeave"
 				:data-index="index"
 				v-for="(item, index) of list"
 				:key="item.id"
@@ -46,15 +47,22 @@
 				list.splice(startIndex, 1);
 				list.splice(targetIndex, 0, temp);
 			}
+			this.dragLeave(e);
 		}
 
-		allowDrop(e: any) {
-			console.log('allowDrop', e)
-		}
-
+		/**
+		 * 当可拖动的元素进入可放置的目标时高亮目标节点
+		 */
 		dragover(e: any) {
-			// console.log('allowDrop', e)
+			e.target.style.background = "#eee";
 
+		}
+
+		/**
+		 * 当拖动元素离开可放置目标节点，重置其背景
+		 */
+		dragLeave(e: any) {
+			e.target.style.background = "";
 		}
 	}
 </script>

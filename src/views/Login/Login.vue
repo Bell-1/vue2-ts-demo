@@ -21,7 +21,7 @@
 					></el-input>
 				</el-form-item>
 				<div class="login-btn-row">
-					<div class="btn pink" @click="handleLogin">登陆</div>
+					<div class="btn blue" @click="handleLogin">登陆</div>
 					<div class="btn text" @click="handleToggleShowForm(2)">注册</div>
 				</div>
 			</el-form>
@@ -57,7 +57,7 @@
 					</el-radio-group>
 				</el-form-item>
 				<div class="login-btn-row">
-					<div class="btn pink" @click="handleRegist">注册</div>
+					<div class="btn blue" @click="handleRegist">注册</div>
 					<div class="btn text" @click="handleToggleShowForm(1)">返回</div>
 				</div>
 			</el-form>
@@ -242,7 +242,7 @@
 					}
 
 					span:last-of-type {
-						@extend .btn, .pink;
+						@extend .btn, .blue;
 						width: 100% !important;
 					}
 
@@ -269,7 +269,7 @@
 				cursor: pointer;
 				transition: all 0.2s;
 
-				&.pink {
+				&.blue {
 					color: #f6f6f6;
 					border-radius: 20px;
 					box-shadow: 4px 4px 6px rgba(#4a8394, 0.6),

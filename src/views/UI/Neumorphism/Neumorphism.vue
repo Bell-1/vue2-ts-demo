@@ -15,7 +15,7 @@
 		</section>
 
 		<section class="card-block">
-			<div class="mimic-card">this is card</div>
+			<div class="mimic-card">card</div>
 		</section>
 
 		<section class="progress-block col">
@@ -24,21 +24,21 @@
 			</div>
 
 			<div class="mimic-progress-wrapper horizontal">
-				<div class="mimic-progress" style="--percent: 50%; --color: #00ffff"></div>
+				<div class="mimic-progress" style="--percent: 50%; --color: #bde0e0"></div>
 			</div>
 
 			<div class="mimic-progress-wrapper horizontal">
-				<div class="mimic-progress" style="--percent: 80%; --color: #800080"></div>
+				<div class="mimic-progress" style="--percent: 80%; --color: #ceb4ce"></div>
 			</div>
 
 			<div class="mimic-progress-wrapper horizontal">
-				<div class="mimic-progress" style="--percent: 100%; --color: #ff8080"></div>
+				<div class="mimic-progress" style="--percent: 100%; --color: #f3c9c9"></div>
 			</div>
 		</section>
 
 		<section class="progress-block">
 			<div class="mimic-progress-wrapper vertical">
-				<div class="mimic-progress" style="--percent: 20%; --color: #80ff80"></div>
+				<div class="mimic-progress" style="--percent: 20%; --color: #b6bf6f"></div>
 			</div>
 
 			<div class="mimic-progress-wrapper vertical">
@@ -46,11 +46,11 @@
 			</div>
 
 			<div class="mimic-progress-wrapper vertical">
-				<div class="mimic-progress" style="--percent: 70%; --color: #0080ff"></div>
+				<div class="mimic-progress" style="--percent: 70%; --color: #7396b9"></div>
 			</div>
 
 			<div class="mimic-progress-wrapper vertical">
-				<div class="mimic-progress" style="--percent: 100%; --color: #ff0080"></div>
+				<div class="mimic-progress" style="--percent: 100%; --color: #e079ad"></div>
 			</div>
 		</section>
 	</div>
@@ -74,7 +74,7 @@
 		section {
 			margin: 50px 0 0 30px;
 			padding: 50px 20px;
-			border-radius: 30px;
+			border-radius: 20px;
 			display: flex;
 			align-items: center;
 			flex-wrap: wrap;
@@ -150,9 +150,13 @@
 				justify-content: center;
 				background: #f3f8fc;
 				border-radius: 20px;
-				color: #111;
-				box-shadow: -6px -6px 20px rgba(217, 210, 200, 0.5),
-					6px 6px 26px rgba(255, 255, 255, 0.85);
+				color: #f3f8fc;
+				font-size: 60px;
+				font-weight: bold;
+				text-shadow: -4px -4px 6px rgba(#f3f3f3, 0.5),
+					4px 4px 6px rgba(#b3b5b8, 0.8);
+				box-shadow: -6px -6px 12px rgba(#f3f3f3, 0.5),
+					6px 6px 12px rgba(#e2e7ec, 0.5);
 				cursor: pointer;
 				transition: all 0.2s;
 			}
