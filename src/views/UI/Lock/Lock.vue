@@ -65,7 +65,7 @@
 
 		calc() {
 			const [h, m, s] = this.$moment().format('HH:mm:ss').split(':');
-			this.hr = (h / 60) * 360;
+			this.hr = (h % 12 / 12) * 360;
 			this.min = (m / 60) * 360;
 			this.sec = (s / 60) * 360;
 		}
