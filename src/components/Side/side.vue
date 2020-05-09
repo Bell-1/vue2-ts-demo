@@ -51,8 +51,10 @@
 
 		}
 
-		handleSelectMenu(e: string) {
-			this.$router.push(e);
+		handleSelectMenu(path: string) {
+			if(this.$route.path !== path){
+				this.$router.push(path);
+			}
 		}
 	}
 </script>

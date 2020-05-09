@@ -18,7 +18,6 @@
 	export default class Fund extends Vue {
 		fundCode: string = ''
 		funds: Set<string> = new Set(['007301', '001868'])
-		timeStamp: number = +new Date();
 		showFunds: string[] = [];
 
 		mounted() {
@@ -36,7 +35,7 @@
 
 		handleUpdate() {
 			let timeStamp: number = +new Date();
-			this.showFunds = [...this.funds].map(code => `http://j4.dfcfw.com/charts/pic6/${code}.png?v=${this.timeStamp}`)
+			this.showFunds = [...this.funds].map(code => `http://j4.dfcfw.com/charts/pic6/${code}.png?v=${timeStamp}`)
 		}
 
 

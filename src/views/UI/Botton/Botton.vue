@@ -1,93 +1,56 @@
-<template>
+ <template>
 	<div class="b-botton">
 		<div class="row">
-			<el-button type="primary">primary</el-button>
-			<el-button type="success">success</el-button>
-			<el-button type="warning">warning</el-button>
-			<el-button type="info">info</el-button>
-			<el-button type="danger">danger</el-button>
-			<el-button type="text">text</el-button>
+			<div class="title"></div>
+			<div class="b-btn h-solid top">
+				<span>top</span>
+			</div>
+			<div class="b-btn h-solid left">
+				<span>left</span>
+			</div>
+			<div class="b-btn h-solid right">
+				<span>right</span>
+			</div>
+			<div class="b-btn h-solid bottom">
+				<span>bottom</span>
+			</div>
+			<div class="b-btn h-solid center">
+				<span>center</span>
+			</div>
 		</div>
 
 		<div class="row">
-			<el-button type="primary" size="medium">medium primary</el-button>
-			<el-button type="success" size="medium">medium success</el-button>
-			<el-button type="warning" size="medium">medium warning</el-button>
-			<el-button type="info" size="medium">medium info</el-button>
-			<el-button type="danger" size="medium">medium danger</el-button>
-			<el-button type="text" size="medium">medium text</el-button>
+			<div class="b-btn border top to-right">
+				<span>top right</span>
+			</div>
+			<div class="b-btn border top to-left">
+				<span>top left</span>
+			</div>
+			<div class="b-btn border top to-center">
+				<span>top center</span>
+			</div>
 		</div>
 
 		<div class="row">
-			<el-button type="primary" size="small">small primary</el-button>
-			<el-button type="success" size="small">small success</el-button>
-			<el-button type="warning" size="small">small warning</el-button>
-			<el-button type="info" size="small">small info</el-button>
-			<el-button type="danger" size="small">small danger</el-button>
-			<el-button type="text" size="small">small text</el-button>
+			<div class="b-btn border bottom to-right">
+				<span>bottom right</span>
+			</div>
+			<div class="b-btn border bottom to-left">
+				<span>bottom left</span>
+			</div>
+			<div class="b-btn border bottom to-center">
+				<span>bottom center</span>
+			</div>
 		</div>
 
 		<div class="row">
-			<el-button type="primary" size="mini">mini primary</el-button>
-			<el-button type="success" size="mini">mini success</el-button>
-			<el-button type="warning" size="mini">mini warning</el-button>
-			<el-button type="info" size="mini">mini info</el-button>
-			<el-button type="danger" size="mini">mini danger</el-button>
-			<el-button type="text" size="mini">mini text</el-button>
-		</div>
+			<div class="b-btn circle">
+				<span>bottom circle</span>
+			</div>
 
-		<div class="row">
-			<el-button type="primary" :plain="true">plain primary</el-button>
-			<el-button type="success" :plain="true">plain success</el-button>
-			<el-button type="warning" :plain="true">plain warning</el-button>
-			<el-button type="info" :plain="true">plain info</el-button>
-			<el-button type="danger" :plain="true">plain danger</el-button>
-			<el-button type="text" :plain="true">plain text</el-button>
-		</div>
-
-		<div class="row">
-			<el-button type="primary" :round="true">round primary</el-button>
-			<el-button type="success" :round="true">round success</el-button>
-			<el-button type="warning" :round="true">round warning</el-button>
-			<el-button type="info" :round="true">round info</el-button>
-			<el-button type="danger" :round="true">round danger</el-button>
-			<el-button type="text" :round="true">round text</el-button>
-		</div>
-
-		<div class="row">
-			<el-button type="primary" icon="el-icon-edit" :round="true">icon primary</el-button>
-			<el-button type="success" icon="el-icon-share" :round="true">icon success</el-button>
-			<el-button type="warning" icon="el-icon-delete" :round="true">icon warning</el-button>
-			<el-button type="info" icon="el-icon-search" :round="true">icon info</el-button>
-			<el-button type="danger" icon="el-icon-download" :round="true">icon danger</el-button>
-			<el-button type="text" icon="el-icon-share" :round="true">icon text</el-button>
-		</div>
-
-		<div class="row">
-			<el-button type="primary" icon="el-icon-edit" :circle="true"></el-button>
-			<el-button type="success" icon="el-icon-share" :circle="true"></el-button>
-			<el-button type="warning" icon="el-icon-delete" :circle="true"></el-button>
-			<el-button type="info" icon="el-icon-search" :circle="true"></el-button>
-			<el-button type="danger" icon="el-icon-download" :circle="true"></el-button>
-			<el-button type="text" icon="el-icon-share" :circle="true"></el-button>
-		</div>
-
-		<div class="row">
-			<el-button type="primary" :loding="true">loding primary</el-button>
-			<el-button type="success" :loding="true">loding success</el-button>
-			<el-button type="warning" :loding="true">loding warning</el-button>
-			<el-button type="info" :loding="true">loding info</el-button>
-			<el-button type="danger" :loding="true">loding danger</el-button>
-			<el-button type="text" :loding="true">loding text</el-button>
-		</div>
-
-		<div class="row">
-			<el-button type="primary" :disabled="true">disabled primary</el-button>
-			<el-button type="success" :disabled="true">disabled success</el-button>
-			<el-button type="warning" :disabled="true">disabled warning</el-button>
-			<el-button type="info" :disabled="true">disabled info</el-button>
-			<el-button type="danger" :disabled="true">disabled danger</el-button>
-			<el-button type="text" :disabled="true">disabled text</el-button>
+			<div class="b-btn across-corners">
+				<span>across corners</span>
+			</div>
 		</div>
 	</div>
 </template>
@@ -101,11 +64,252 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	.b-botton {
 		.row {
 			display: flex;
 			margin-bottom: 20px;
+			.b-btn {
+				position: relative;
+				margin: 10px;
+				padding: 0;
+				width: 160px;
+				height: 80px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 6px;
+				background: #6f87b4;
+				color: white;
+				font-size: 22px;
+				overflow: hidden;
+				cursor: pointer;
+				box-shadow: 6px 6px 12px #818a9b, -6px -6px 12px #d1d7e2;
+				box-sizing: border-box;
+
+				span {
+					z-index: 1;
+				}
+
+				&.h-solid {
+					&::before {
+						content: '';
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						position: absolute;
+						background: #5777b1;
+						transition: all 0.2s linear;
+						z-index: 0;
+					}
+					&.top {
+						&::before {
+							top: -100%;
+						}
+						&:hover {
+							&::before {
+								top: 0;
+							}
+						}
+					}
+
+					&.left {
+						&::before {
+							left: -100%;
+						}
+						&:hover {
+							&::before {
+								left: 0;
+							}
+						}
+					}
+
+					&.right {
+						&::before {
+							left: 100%;
+						}
+						&:hover {
+							&::before {
+								left: 0;
+							}
+						}
+					}
+
+					&.bottom {
+						&::before {
+							top: 100%;
+						}
+						&:hover {
+							&::before {
+								top: 0;
+							}
+						}
+					}
+
+					&.center {
+						&::before {
+							top: 50%;
+							left: 50%;
+							width: 0;
+							height: 0;
+						}
+						&:hover {
+							&::before {
+								top: 0;
+								left: 0;
+								width: 100%;
+								height: 100%;
+							}
+						}
+					}
+				}
+
+				&.border {
+					&::before {
+						position: absolute;
+						content: '';
+						background-color: rgb(199, 252, 199);
+						transition: all 0.3s linear;
+					}
+					&.top {
+						&::before {
+							height: 2px;
+							top: 0;
+						}
+					}
+					&.bottom {
+						&::before {
+							height: 2px;
+							bottom: 0;
+						}
+					}
+					&.top,
+					&.bottom {
+						&.to-right {
+							&::before {
+								left: 0;
+								right: 100%;
+							}
+							&:hover {
+								&::before {
+									left: 0;
+									right: 0;
+								}
+							}
+						}
+
+						&.to-left {
+							&::before {
+								left: 100%;
+								right: 0;
+							}
+							&:hover {
+								&::before {
+									left: 0;
+									right: 0;
+								}
+							}
+						}
+
+						&.to-center {
+							&::before {
+								left: 50%;
+								right: 50%;
+							}
+							&:hover {
+								&::before {
+									left: 0;
+									right: 0;
+								}
+							}
+						}
+					}
+				}
+
+				&.circle {
+					&::before,
+					&::after {
+						border-radius: 6px;
+						box-sizing: border-box;
+						content: '';
+						position: absolute;
+						border: 2px solid transparent;
+						width: 0;
+						height: 0;
+					}
+
+					&::before {
+						top: 0;
+						left: 0;
+					}
+					&::after {
+						bottom: 0;
+						right: 0;
+					}
+
+					&:hover {
+						&::before {
+							border-top-color: rgb(199, 252, 199);
+							border-right-color: rgb(199, 252, 199);
+							width: 100%;
+							height: 100%;
+							transition: width 0.25s ease-out,
+								height 0.25s ease-out 0.25s;
+						}
+						&::after {
+							border-bottom-color: rgb(199, 252, 199);
+							border-left-color: rgb(199, 252, 199);
+							width: 100%;
+							height: 100%;
+							transition: border-color 0s ease-out 0.5s,
+								width 0.25s ease-out 0.5s,
+								height 0.25s ease-out 0.75s;
+						}
+					}
+				}
+
+				&.across-corners {
+					&::before,
+					&::after {
+						border-radius: 6px;
+						box-sizing: border-box;
+						content: '';
+						position: absolute;
+						border: 2px solid transparent;
+						width: 0;
+						height: 0;
+						transition: all 0.25s ease-out;
+					}
+
+					&::before {
+						top: 0;
+						left: 0;
+					}
+					&::after {
+						bottom: 0;
+						right: 0;
+					}
+
+					&:hover {
+						&::before,
+						&::after {
+							width: 100%;
+							height: 100%;
+						}
+						&::before {
+							border-top-color: rgb(199, 252, 199);
+							border-left-color: rgb(199, 252, 199);
+						}
+						&::after {
+							border-bottom-color: rgb(199, 252, 199);
+							border-right-color: rgb(199, 252, 199);
+						}
+					}
+				}
+			}
 		}
 	}
 </style>
