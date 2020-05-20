@@ -24,3 +24,14 @@ npm run serve
 ```
 npm run build
 ```
+
+
+
+### upload 
+
+cd /usr/local/nginx/html
+tar -czf log/vue-$(date +%Y%m%d%H%M%S).tar.gz vueWeb
+rm -rf vueWeb
+mv -f  vue vueWeb
+
+
