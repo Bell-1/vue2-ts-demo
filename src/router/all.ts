@@ -4,6 +4,7 @@ const all: any = {
 	Home: () => import('@/views/Home/Home.vue'), //首页
 	Content: () => import('@/views/Content.vue'), //app路由页
 	Dashboard: () => import('@/views/Dashboard/Dashboard.vue'), // dashboard
+	Draw: () => import('@/views/Draw/Draw.vue'), // 画图
 	UserManage: () => import('@/views/UserManage/UserManage.vue'), // 用户管理
 	UI: () => import('@/views/UI/UI.vue'), // UI 路由页
 	BBotton: () => import('@/views/UI/Botton/Botton.vue'), // 按钮

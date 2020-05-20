@@ -9,7 +9,6 @@
 <script lang="ts">
 	import { Vue, Component } from 'vue-property-decorator'
 	import { Action, namespace } from 'vuex-class'
-	import { twoSum } from '@/utils/tree.js'
 
 	const adminStore = namespace('admin');
 
@@ -23,7 +22,6 @@
 		@adminStore.State('userInfo') userInfo: any
 
 		mounted() {
-			console.log('1111', twoSum([3, 2, 4], 6))
 		}
 	}
 </script>
