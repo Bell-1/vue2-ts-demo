@@ -1,9 +1,7 @@
 const path = require('path')
 const CompressionPlugin = require('compression-webpack-plugin');
+const resolve = dir => path.resolve(__dirname, dir);
 
-function resolve(dir) {
-    return path.resolve(__dirname, dir);
-}
 const alias = {
     '@': resolve('src'),
 }
