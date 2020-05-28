@@ -3,16 +3,16 @@ const userInfo = localStorage.getItem('userInfo');
 export default {
 	namespaced: true,
 	state: {
-		userInfo: userInfo ? JSON.parse(userInfo) : null,
+		userInfo: !!userInfo ? JSON.parse(userInfo) : null,
 	},
 	mutations: {
 		setUserInfo(state: any, userInfo: any) {
 			localStorage.setItem('userInfo', JSON.stringify(userInfo))
-			localStorage.setItem('token',userInfo.token)
+			localStorage.setItem('token', userInfo.token)
 			state.userInfo = userInfo;
 		},
 
-		logout(state: any, userInfo:any){
+		logout(state: any, userInfo: any) {
 			localStorage.removeItem('userInfo');
 			localStorage.removeItem('token');
 			state.userInfo = null;
@@ -43,7 +43,7 @@ export default {
 			})
 		},
 
-		logout({commit, rootState}:any){
+		logout({ commit, rootState }: any) {
 			return new Promise(async (resolve: any, reject: any) => {
 				try {
 					await rootState.http.request('logout');

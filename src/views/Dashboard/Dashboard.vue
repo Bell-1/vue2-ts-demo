@@ -1,13 +1,13 @@
 <template>
 	<div class="dashboard">
-		<fund></fund>
+		<LineChart></LineChart>
+		<BarChart></BarChart>
 	</div>
 </template>
 
 <script lang="ts">
 	import { Vue, Component, Prop } from 'vue-property-decorator'
 	import LineChart from './charts/Line.vue'
-	import LineChart1 from './charts/Line1.vue'
 	import BarChart from './charts/Bar.vue'
 	import Fund from './charts/Fund.vue'
 
@@ -15,7 +15,6 @@
 		components: {
 			Fund,
 			LineChart,
-			LineChart1,
 			BarChart,
 		}
 	})

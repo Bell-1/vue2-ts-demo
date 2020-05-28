@@ -5,6 +5,7 @@ const all: any = {
 	Content: () => import('@/views/Content.vue'), //app路由页
 	Dashboard: () => import('@/views/Dashboard/Dashboard.vue'), // dashboard
 	Reptile: () => import('@/views/Reptile/Reptile.vue'), // 爬虫
+	Novel: () => import('@/views/Reptile/Novel.vue'), // 小说
 	Draw: () => import('@/views/Draw/Draw.vue'), // 画图
 	UserManage: () => import('@/views/UserManage/UserManage.vue'), // 用户管理
 	UI: () => import('@/views/UI/UI.vue'), // UI 路由页

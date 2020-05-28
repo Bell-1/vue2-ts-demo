@@ -26,13 +26,18 @@ export const menus: Route[] = [
 	},
 ];
 
+const others: Route[] = [
+	{ path: '/novel', component: getComponents('Novel'), title: '小说' },
+]
+
 export const routers: Route[] = [
 	{ path: '/', redirect: '/login' },
 	{ path: '/login', component: getComponents('Login'), title: '登陆' },
 	{
 		path: '/app',
 		component: getComponents('Content'),
-		children: [...menus,]
+		children: [...menus]
 	},
+	...others,
 	{ path: '*', component: getComponents('NotFound'), title: '404' },
 ];
