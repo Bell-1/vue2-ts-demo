@@ -5,7 +5,7 @@ import store from './store'
 import ElementUI from 'element-ui';
 import ECharts from 'vue-echarts-ts'
 import moment from 'moment'
-import Http from 'http-vue-axios'
+import Http from 'axios-vue-http'
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/scss/global.scss'
 import apiList from '@/api'
@@ -16,20 +16,20 @@ Vue.use(Http);
 Vue.config.productionTip = false
 Vue.prototype.$moment = moment;
 
-function success(res: any, resolve: any, reject: any) {
-  const { code, data, msg } = res;
+function success({ res, resolve, reject }: any): void {
+  let { code, data } = res.data;
   if (+code === 1) {
     resolve(data);
   } else {
     errorCode(+code);
-    app.$message.error(msg || '操作失败');
     reject(res);
   }
 }
 
-function fail(res: any) {
+function fail({ res, reject }: any): void {
   const { status } = res;
   errorCode(+status);
+  reject(res);
 }
 
 function errorCode(code: number) {
@@ -46,8 +46,7 @@ function errorCode(code: number) {
     default:
       break;
   }
-  app.$message.error(msg);
-
+  app.$message.error(msg || '操作失败');
 }
 
 function genHeader() {

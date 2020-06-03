@@ -9,7 +9,6 @@
 
 	@Component({})
 	export default class App extends Vue {
-		
 	}
 </script>
 
@@ -23,6 +22,5 @@
 		.el-container {
 			height: 100%;
 		}
-
 	}
 </style>

@@ -23,7 +23,8 @@ export default {
 		login({ commit, rootState }: any, data: any) {
 			return new Promise(async (resolve: any, reject: any) => {
 				try {
-					const info = await rootState.http.request('login', data);
+					let {http} = rootState;
+					const info = await http.request('login', data);
 					commit('setUserInfo', info);
 					resolve(info);
 				} catch (error) {

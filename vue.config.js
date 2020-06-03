@@ -26,6 +26,11 @@ module.exports = {
                 deleteOriginalAssets: false,
             })
             newConf.plugins.push(gzip);
+
+        }
+        if(process.env.npm_config_report){
+            var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+            newConf.plugins.push(new BundleAnalyzerPlugin());
         }
         return newConf
     },
