@@ -4,7 +4,13 @@ import { getComponents } from './all'
 export const menus: Route[] = [
 	{ path: '/app/home', component: getComponents('Home'), title: '首页', icon: 'el-icon-s-home' },
 	{ path: '/app/dashboard', component: getComponents('Dashboard'), title: '图表', icon: 'el-icon-s-marketing' },
-	{ path: '/app/draw', component: getComponents('Draw'), title: '画图', icon: 'el-icon-picture-outline' },
+	{
+		path: '/app/Canvas', component: getComponents('Canvas'), title: '画图', icon: 'el-icon-picture-outline',
+		children: [
+			{ path: '/app/draw', component: getComponents('Draw'), title: 'canvas', icon: 'el-icon-picture-outline' },
+			{ path: '/app/Star', component: getComponents('Star'), title: 'Star', icon: 'el-icon-picture-outline' },
+		]
+	},
 	{ path: '/app/reptile', component: getComponents('Reptile'), title: '爬虫', icon: 'el-icon-attract' },
 	{
 		path: '/app/ui', component: getComponents('UI'), title: 'UI', icon: 'iconfont icon-sheji',

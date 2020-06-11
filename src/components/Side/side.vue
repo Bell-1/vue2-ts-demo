@@ -1,7 +1,7 @@
 <template>
-	<div class="side">
+	<div class="side mini-scroll">
 		<el-menu
-			default-active="2"
+			:default-active="activeRoute"
 			class="menu"
 			:collapse="isCollapse"
 			@open="handleOpen"
@@ -39,9 +39,14 @@
 
 	@Component({})
 	export default class Side extends Vue {
+		activeRoute = '';
 		menus = menus;
 
 		@Prop() isCollapse!: boolean;
+
+		mounted() {
+			this.activeRoute = this.$route.path;
+		}
 
 		handleOpen() {
 
@@ -52,7 +57,7 @@
 		}
 
 		handleSelectMenu(path: string) {
-			if(this.$route.path !== path){
+			if (this.$route.path !== path) {
 				this.$router.push(path);
 			}
 		}
@@ -63,6 +68,7 @@
 	.side {
 		position: relative;
 		height: 100%;
+		box-shadow: 0 0 10px #eee;
 		.menu:not(.el-menu--collapse) {
 			width: 200px;
 			min-height: 400px;
@@ -70,7 +76,8 @@
 		.el-menu {
 			height: 100%;
 			background: none;
+			border-right: none;
+			// box-shadow: 0 0 10px #eee;
 		}
-
 	}
 </style>

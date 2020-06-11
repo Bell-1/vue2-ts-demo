@@ -7,6 +7,7 @@ import ECharts from 'vue-echarts-ts'
 import moment from 'moment'
 import Http from 'axios-vue-http'
 import 'element-ui/lib/theme-chalk/index.css';
+import 'normalize.css'
 import '@/scss/global.scss'
 import apiList from '@/api'
 
