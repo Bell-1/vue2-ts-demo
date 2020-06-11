@@ -27,15 +27,15 @@
 			ctx.lineWidth = 1;
 			ctx.lineJoin = "round";
 			for (let i = 0; i < 60; i++) {
-				this.createStar();
+				this.createStar(true);
 			}
 			this.draw();
 			this.move();
 		}
 
-		createStar() {
+		createStar(isInit = false) {
 			const x = Math.random() * 500;
-			const y = Math.random() * 500 + 300;
+			const y = isInit ? Math.random() * 500 : Math.random() * 100 + 500;
 			const angle = Math.random() * 90;
 			const size = Math.random() * 6 + 5;
 			const color = `rgb(${getColor()}, ${getColor()}, ${getColor()})`;
