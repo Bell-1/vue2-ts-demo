@@ -15,6 +15,7 @@ export const menus: Route[] = [
 			{ path: '/app/ui/Neumorphism', component: getComponents('Neumorphism'), title: '新拟态', icon: '' },
 		]
 	},
+	{ path: '/app/calculate', component: getComponents('Calculate'), title: '计算', icon: 'iconfont icon-calculator' },
 	{ path: '/app/load', component: getComponents('BLoad'), title: 'load', icon: 'el-icon-loading' },
 	{ path: '/app/usermanage', component: getComponents('UserManage'), title: '用户管理', icon: 'el-icon-user-solid' },
 	{

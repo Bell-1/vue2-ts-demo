@@ -17,6 +17,7 @@ const all: any = {
 	Particle: () => import('@/views/MouseAnimation/Particle/Particle.vue'), // 粒子效果
 	Drag: () => import('@/views/MouseAnimation/Drag/Drag.vue'), // 拖动效果
 	Lock: () => import('@/views/UI/Lock/Lock.vue'), // 时钟
+	Calculate: () => import('@/views/Calculate/Calculate.vue'), // 计算
 }
 
 

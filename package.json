@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "dev": "npm run start",
     "start": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "report": "npm run build -report"
@@ -12,11 +13,10 @@
     "@types/lodash": "^4.14.149",
     "@types/vue-color": "^2.4.2",
     "axios": "^0.19.2",
-    "axios-vue-http": "0.0.3",
+    "axios-vue-http": "0.0.5",
     "core-js": "^3.6.4",
     "echarts": "^4.6.0",
     "element-ui": "^2.13.0",
-    "http-vue-axios": "0.0.14",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "vue": "^2.6.11",
@@ -42,5 +42,6 @@
     "typescript": "~3.7.5",
     "vue-template-compiler": "^2.6.11",
     "webpack-bundle-analyzer": "^3.8.0"
-  }
+  },
+  "types": "types/index.d.ts"
 }
