@@ -11,7 +11,7 @@
 	export default class ClipAuto extends Vue {
 		canvas: any = null;
 		ctx: any = null;
-		area = { x: 200, y: 150, r: 100, xSpeed: 8, ySpeed: 4 };
+		area = { x: 200, y: 150, r: 80, xSpeed: 2, ySpeed: 3 };
 
 		mounted() {
 			this.init();
@@ -37,9 +37,7 @@
 				area.ySpeed = -ySpeed;
 			}
 			this.draw();
-			setTimeout(() => {
-				this.moveClipArea();
-			}, 100);
+			requestAnimationFrame(this.moveClipArea);
 		}
 		draw() {
 			const { canvas, ctx, area } = this;
@@ -55,10 +53,8 @@
 			ctx.beginPath();
 			ctx.arc(x, y, r, 0, Math.PI * 2);
 			ctx.fillStyle = '#FFF';
-			ctx.clip();
-
-			ctx.fillRect(0, 0, width, height);
 			ctx.fill();
+			ctx.clip();
 
 			ctx.font = "90px Georgia";
 			ctx.fillStyle = 'red';

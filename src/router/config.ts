@@ -21,10 +21,11 @@ export const menus: Route[] = [
 			{ path: '/app/ui/botton', component: getComponents('BBotton'), title: 'Button', icon: '' },
 			{ path: '/app/ui/icon', component: getComponents('BIcon'), title: 'Icon', icon: '' },
 			{ path: '/app/ui/Neumorphism', component: getComponents('Neumorphism'), title: 'Neumorphism', icon: '' },
+			
 		]
 	},
 	{ path: '/app/calculate', component: getComponents('Calculate'), title: 'Calculate', icon: 'iconfont icon-calculator' },
-	{ path: '/app/load', component: getComponents('BLoad'), title: 'load', icon: 'el-icon-loading' },
+	{ path: '/app/load', component: getComponents('BLoad'), title: 'Load', icon: 'el-icon-loading' },
 	{ path: '/app/usermanage', component: getComponents('UserManage'), title: 'UserManage', icon: 'el-icon-user-solid' },
 	{
 		path: '/app/mouseanimation', component: getComponents('MouseAnimation'), title: 'Mouse', icon: 'iconfont icon-mouse',

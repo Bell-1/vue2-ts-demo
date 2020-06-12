@@ -45,10 +45,8 @@
 			ctx.beginPath();
 			ctx.arc(x, y, r, 0, Math.PI * 2);
 			ctx.fillStyle = '#FFF';
-			ctx.clip();
-
-			ctx.fillRect(0, 0, width, height);
 			ctx.fill();
+			ctx.clip();
 
 			ctx.font = "90px Georgia";
 			ctx.fillStyle = 'red';

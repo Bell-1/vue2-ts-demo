@@ -47,7 +47,6 @@
 			let { stars } = this;
 			stars.forEach((star, index) => {
 				const { x, y, size, speed } = star;
-				// star.x -= speed;
 				star.y -= speed;
 				if (x < -size || y < -size) {
 					stars.splice(index, 1);
@@ -57,9 +56,7 @@
 				this.createStar();
 			}
 			this.draw();
-			requestAnimationFrame(() => {
-				this.move();
-			})
+			requestAnimationFrame(this.move);
 
 		}
 

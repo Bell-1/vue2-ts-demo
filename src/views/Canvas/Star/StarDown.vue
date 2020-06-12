@@ -56,9 +56,7 @@
 				this.createStar();
 			}
 			this.draw();
-			requestAnimationFrame(() => {
-				this.move();
-			})
+			requestAnimationFrame(this.move);
 
 		}
 
