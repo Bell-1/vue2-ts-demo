@@ -1,35 +1,37 @@
 <template>
-	<div class="Star flex center around">
-		<star-up></star-up>
-		<star-down></star-down>
+	<div class="ClipTxt flex wrap around">
+		<clip-auto></clip-auto>
+		<clip-hover></clip-hover>
+		<clip-star></clip-star>
 	</div>
 </template>
 
 <script lang="ts">
 	import { Vue, Component, Prop } from 'vue-property-decorator'
-	import StarDown from './StarDown.vue'
-	import StarUp from './StarUp.vue'
-
-	const getColor = () => Math.floor(Math.random() * 255);
+	import ClipAuto from './ClipAuto.vue'
+	import ClipHover from './ClipHover.vue'
+	import ClipStar from './ClipStar.vue'
 
 	@Component({
 		components: {
-			StarUp,
-			StarDown
+			ClipAuto,
+			ClipHover,
+			ClipStar
 		}
 	})
-	export default class HCanvas extends Vue {
+	export default class ClipTxt extends Vue {
+
 	}
 </script>
-
 <style lang="scss">
-	.Star {
+	.ClipTxt {
 		height: 100%;
 		.canvas-wrapper {
 			box-shadow: 0 0 10px rgb(228, 227, 227);
 			border-radius: 6px;
 			width: 500px;
 			height: 500px;
+			margin: 10px;
 			canvas {
 				width: 100%;
 				height: 100%;

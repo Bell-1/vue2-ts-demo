@@ -9,6 +9,7 @@ const all: any = {
 	Canvas: () => import('@/views/Canvas/Canvas.vue'), // 画图Router
 	Draw: () => import('@/views/Canvas/Draw/Draw.vue'), // Draw
 	Star: () => import('@/views/Canvas/Star/Star.vue'), // 画图 html2canvas
+	ClipTxt: () => import('@/views/Canvas/ClipTxt/ClipTxt.vue'), // 画图 Clip
 	UserManage: () => import('@/views/UserManage/UserManage.vue'), // 用户管理
 	UI: () => import('@/views/UI/UI.vue'), // UI 路由页
 	BBotton: () => import('@/views/UI/Botton/Botton.vue'), // 按钮
