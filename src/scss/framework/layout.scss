@@ -1,6 +1,12 @@
 #app {
     background: rgb(251, 255, 255);
 
+    .el-main {
+        &>div {
+            min-height: 100%;
+        }
+    }
+
     .el-aside {
         box-shadow: 0 0 15px rgb(219, 224, 228);
     }
