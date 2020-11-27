@@ -1,7 +1,7 @@
 <template>
 	<div class="user-manage" v-loading="loading">
 		<div class="create">
-			<el-button type="primary" size="small" @click="handleCreate">新建用户</el-button>
+			<el-button type="primary222" size="small" @click="handleCreate">新建用户</el-button>
 		</div>
 		<div class="filter">
 			<el-form :model="condition" inline>

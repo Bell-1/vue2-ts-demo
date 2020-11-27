@@ -18,10 +18,3 @@
 		amount: string = '';
 	}
 </script>
-
-<style lang="scss">
-	.Calculate {
-		.calc {
-		}
-	}
-</style>

@@ -21,6 +21,9 @@ const all: any = {
 	Drag: () => import('@/views/MouseAnimation/Drag/Drag.vue'), // 拖动效果
 	Lock: () => import('@/views/UI/Lock/Lock.vue'), // 时钟
 	Calculate: () => import('@/views/Calculate/Calculate.vue'), // 计算
+	BinaryTree: () => import('@/views/BinaryTree/BinaryTree.vue'), // 二叉树
+	Lottery: () => import('@/views/Lottery/Lottery.vue'), // 抽奖
+	GradeStar: () => import('@/views/Star/Star.vue'), // star
 }
 
 

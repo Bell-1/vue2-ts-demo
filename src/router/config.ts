@@ -21,7 +21,7 @@ export const menus: Route[] = [
 			{ path: '/app/ui/botton', component: getComponents('BBotton'), title: 'Button', icon: '' },
 			{ path: '/app/ui/icon', component: getComponents('BIcon'), title: 'Icon', icon: '' },
 			{ path: '/app/ui/Neumorphism', component: getComponents('Neumorphism'), title: 'Neumorphism', icon: '' },
-			
+
 		]
 	},
 	{ path: '/app/calculate', component: getComponents('Calculate'), title: 'Calculate', icon: 'iconfont icon-calculator' },
@@ -33,6 +33,9 @@ export const menus: Route[] = [
 			{ path: '/app/mouseanimation/Drag', component: getComponents('Drag'), title: 'Drag', icon: '' },
 		]
 	},
+	{ path: '/app/binarytree', component: getComponents('BinaryTree'), title: 'BinaryTree', icon: 'iconfont icon-tree' },
+	{ path: '/app/lottery', component: getComponents('Lottery'), title: 'Lottery', icon: 'iconfont icon-choujiang' },
+	{ path: '/app/gradestar', component: getComponents('GradeStar'), title: 'GradeStar', icon: 'iconfont icon-star' },
 ];
 
 const others: Route[] = [

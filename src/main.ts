@@ -11,6 +11,8 @@ import 'normalize.css'
 import '@/scss/global.scss'
 import apiList from '@/api'
 
+import '@/utils/live2d/live2d'
+
 Vue.use(ElementUI);
 Vue.use(ECharts);
 Vue.use(Http);
@@ -18,11 +20,11 @@ Vue.config.productionTip = false
 Vue.prototype.$moment = moment;
 
 function success({ res, resolve, reject }: any): void {
-  let { code, data } = res.data;
+  let { code, data, msg } = res.data;
   if (+code === 1) {
     resolve(data);
   } else {
-    errorCode(+code);
+    errorCode(+code, msg);
     reject(res);
   }
 }
@@ -33,21 +35,22 @@ function fail({ res, reject }: any): void {
   reject(res);
 }
 
-function errorCode(code: number) {
-  let msg = '操作失败';
-  switch (Math.abs(code)) {
-    case 401:
-    case 403:
-      msg = '未登录';
-      app.$router.push('/login');
-      break;
-    case 403:
-      msg = '服务器错误';
-      break;
-    default:
-      break;
+function errorCode(code = -1, msg = '操作失败') {
+  interface errs {
+    [code: string]: string
   }
-  app.$message.error(msg || '操作失败');
+  const errs: errs = {
+    '-401': '未登录',
+    '-403': '未登录',
+    '-500': '服务器错误',
+  }
+
+  msg = errs[code] || msg;
+  app.$message.error(msg);
+
+  if (code === -401 || code === -403) {
+    app.$router.push('/login');
+  }
 }
 
 function genHeader() {

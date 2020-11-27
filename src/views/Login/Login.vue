@@ -11,7 +11,7 @@
 						@keydown.enter.native="handleLogin"
 					></el-input>
 				</el-form-item>
-				<el-form-item label label-width="0" prop="pwd">
+				<el-form-item label label-widthz="0" prop="pwd">
 					<el-input
 						v-model="form.pwd"
 						type="password"
@@ -57,7 +57,7 @@
 					</el-radio-group>
 				</el-form-item>
 				<div class="login-btn-row">
-					<div class="btn blue" @click="handleRegist">注册</div>
+					<div class="btn blue" @click="handleRegist">注册</div></a>
 					<div class="btn text" @click="handleToggleShowForm(1)">返回</div>
 				</div>
 			</el-form>
@@ -70,7 +70,7 @@
 	import { Vue, Component } from 'vue-property-decorator'
 	import { Mutation, Action } from 'vuex-class'
 	import { phoneRule, passwordRule, emptyRule, emailRule } from '@/utils/verify'
-
+	
 	@Component
 	export default class Login extends Vue {
 		form: any = {
@@ -146,13 +146,7 @@
 	.Login {
 		width: 100vw;
 		height: 100vh;
-		background-image: linear-gradient(
-			26deg,
-			#f6f6f6,
-			#acf0cb 60%,
-			rgb(143, 233, 188) 80%,
-			#298ee0
-		);
+		background-image: linear-gradient(26deg, #f6f6f6, #acf0cb 60%, rgb(143, 233, 188) 80%, #298ee0);
 		&:before {
 			position: absolute;
 			top: 0;
@@ -161,13 +155,7 @@
 			bottom: 0;
 			content: '';
 			filter: opacity(0.4);
-			background: linear-gradient(
-				-30deg,
-				#438383,
-				#0ac2fa 40%,
-				#c4acf1 80%,
-				#fdf4e4
-			);
+			background: linear-gradient(-30deg, #438383, #0ac2fa 40%, #c4acf1 80%, #fdf4e4);
 		}
 		.box {
 			position: absolute;
@@ -177,8 +165,7 @@
 			width: 300px;
 			border-radius: 20px;
 			backface-visibility: hidden;
-			box-shadow: 6px 6px 12px rgba(#4a8394, 0.6),
-				-6px -6px 12px rgba(228, 249, 255, 0.5);
+			box-shadow: 6px 6px 12px rgba(#4a8394, 0.6), -6px -6px 12px rgba(228, 249, 255, 0.5);
 			border-radius: 20px;
 			transition: all 1s;
 			color: #f6f6f6;
@@ -219,8 +206,7 @@
 				border: none;
 				border-radius: 20px;
 				text-align: center;
-				box-shadow: inset 2px 2px 4px rgba(#4a8394, 0.8),
-					inset -2px -2px 4px rgba(228, 249, 255, 0.5);
+				box-shadow: inset 2px 2px 4px rgba(#4a8394, 0.8), inset -2px -2px 4px rgba(228, 249, 255, 0.5);
 				font-size: 16px;
 
 				&::placeholder {
@@ -272,16 +258,14 @@
 				&.blue {
 					color: #f6f6f6;
 					border-radius: 20px;
-					box-shadow: 4px 4px 6px rgba(#4a8394, 0.6),
-						-2px -2px 4px rgba(228, 249, 255, 0.5);
+					box-shadow: 4px 4px 6px rgba(#4a8394, 0.6), -2px -2px 4px rgba(228, 249, 255, 0.5);
 
 					&:hover {
 						color: #949996;
 					}
 
 					&:active {
-						box-shadow: 0 0 0 #4a8394, 0 0 0 rgba(228, 249, 255, 0.5),
-							inset 2px 2px 4px rgba(#4a8394, 0.8),
+						box-shadow: 0 0 0 #4a8394, 0 0 0 rgba(228, 249, 255, 0.5), inset 2px 2px 4px rgba(#4a8394, 0.8),
 							inset -2px -2px 4px rgba(228, 249, 255, 0.5);
 					}
 				}

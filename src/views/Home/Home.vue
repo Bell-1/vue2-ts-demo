@@ -3,6 +3,7 @@
 		<div class="welcome">
 			<div>欢迎回家</div>
 		</div>
+		<bdo dir="ltr">欢迎回家</bdo>
 	</div>
 </template>
 
@@ -12,17 +13,20 @@
 
 	const adminStore = namespace('admin');
 
-	const str = ['asdbsdg', 'asdbasd', 'asdbs'];
-
 	@Component({
 		components: {
 		}
 	})
 	export default class Home extends Vue {
-		@adminStore.State('userInfo') userInfo: any
+		@adminStore.State('userInfo') userInfo: any;
+
 
 		mounted() {
 		}
+		changeColor(e:any) {
+			console.log(e.target.value)
+		}
+
 	}
 </script>
 
@@ -35,6 +39,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		user-select: none;
 
 		.welcome {
 			position: relative;
@@ -48,7 +53,6 @@
 				font-weight: bold;
 				color: transparent;
 				-webkit-text-stroke: 1px rgb(168, 240, 233);
-				// clip-path: polygon(14% 57%, 38% 46%, 60% 54%, 74% 37%, 100% 39%, 100% 100%, 0% 100%, 0 45%);
 
 				&::before {
 					position: absolute;
@@ -56,34 +60,16 @@
 					top: 0;
 					content: '欢迎回家';
 					color: rgb(139, 248, 237);
-					animation: wave 5s infinite;
+					animation: wave 4s linear infinite;
 				}
 
 				@keyframes wave {
 					0%,
 					100% {
-						clip-path: polygon(
-							0 100%,
-							0 50%,
-							19% 39%,
-							35% 48%,
-							57% 61%,
-							79% 54%,
-							100% 65%,
-							100% 100%
-						);
+						clip-path: polygon(0 100%, 0 50%, 19% 40%, 35% 60%, 57% 40%, 79% 60%, 100% 35%, 100% 100%);
 					}
 					50% {
-						clip-path: polygon(
-							0 100%,
-							0 40%,
-							19% 60%,
-							43% 51%,
-							59% 53%,
-							71% 65%,
-							100% 45%,
-							100% 100%
-						);
+						clip-path: polygon(0 100%, 0 30%, 19% 60%, 43% 40%, 59% 60%, 71% 40%, 100% 60%, 100% 100%);
 					}
 				}
 			}
