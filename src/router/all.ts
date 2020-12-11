@@ -24,6 +24,7 @@ const all: any = {
 	BinaryTree: () => import('@/views/BinaryTree/BinaryTree.vue'), // 二叉树
 	Lottery: () => import('@/views/Lottery/Lottery.vue'), // 抽奖
 	GradeStar: () => import('@/views/Star/Star.vue'), // star
+	BloodSugar: () => import('@/views/BloodSugar/BloodSugar.vue'), // 血糖
 }
 
 

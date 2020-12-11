@@ -1,4 +1,4 @@
 #!/bin/sh
-scp -r ./dist root@beiyunjiang.top:/usr/local/nginx/html/vue
-ssh root@beiyunjiang.top
+scp -r ./dist root@182.254.158.59:/mnt/code/vue-new
+ssh root@182.254.158.59
 

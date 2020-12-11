@@ -45,6 +45,7 @@ const others: Route[] = [
 export const routers: Route[] = [
 	{ path: '/', redirect: '/login' },
 	{ path: '/login', component: getComponents('Login'), title: '登陆' },
+	{ path: '/bloodsugar', component: getComponents('BloodSugar'), title: 'BloodSugar', icon: 'iconfont icon-star' },
 	{
 		path: '/app',
 		component: getComponents('Content'),

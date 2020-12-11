@@ -29,9 +29,13 @@ npm run build
 
 ### upload 
 
-cd /usr/local/nginx/html
-tar -czf log/vue-$(date +%Y%m%d%H%M%S).tar.gz vueWeb
-rm -rf vueWeb
-mv -f  vue vueWeb
+scp -r ./dist.rar root@vue.beiyunjiang.top:/mnt/code/vue-new.rar
 
+ssh root@vue.beiyunjiang.top
 
+cd /mnt/code
+tar -czf updateLog/vue-$(date +%Y%m%d%H%M%S).tar.gz vue
+rm -rf vue
+rar x vue-new.rar ./vue-new/
+mv vue-new/dist ./vue/
+rm -rf  vue-new*

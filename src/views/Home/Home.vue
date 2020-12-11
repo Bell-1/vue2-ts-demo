@@ -3,7 +3,6 @@
 		<div class="welcome">
 			<div>欢迎回家</div>
 		</div>
-		<bdo dir="ltr">欢迎回家</bdo>
 	</div>
 </template>
 
