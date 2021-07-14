@@ -133,7 +133,7 @@
 		}
 
 		breadthTraversal(node: TreeNode | null) {
-			let list = [];
+			let list:any = [];
 			if (node) {
 				let que = [node];
 				while (que.length) {

@@ -3,12 +3,15 @@
 		<div class="BloodSugar__header">
 			<div class="BloodSugar__title">血糖管理</div>
 			<div class="BloodSugar__operate">
-				<span></span>
+				<span>
+					<i class="el-icon-search"></i>
+				</span>
 				<span @click="addShow = !addShow">
 					<i :class="addShow ? 'el-icon-error' : 'el-icon-circle-plus'"></i>
 				</span>
 			</div>
 		</div>
+		<div class="mask"></div>
 		<div class="add" v-show="addShow">
 			<el-form :model="form" inline>
 				<el-form-item label="血糖">
@@ -80,6 +83,7 @@
 		};
 		addShow = false;
 		mounted() {
+			window.location.href='http://bloodsugar.beiyunjiang.top/bloodsugar';
 			this.fetchBloodSugar();
 		}
 
@@ -104,7 +108,7 @@
 			} catch (error) { }
 		}
 		disposeItem(item: any) {
-			item.timeStr = this.$moment(item.time * 1000).format("YYYY-MM-DD hh:mm:ss");
+			item.timeStr = this.$moment(item.time * 1000).format("YYYY-MM-DD HH:mm:ss");
 			item.typeStr = this.types[item.type];
 			return Object.freeze(item);
 		}

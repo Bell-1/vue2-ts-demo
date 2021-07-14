@@ -1,18 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title>bell-vue-ts-demo</title>
     <link rel="stylesheet" href="//at.alicdn.com/t/font_1674832_dvjrh2ufxml.css">
-  </head>
-  <body>
+</head>
+
+<body>
     <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+        <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
-  </body>
-</html>
 
+    <script src='/yett.min.js'></script>
+    <% for (var jsurl of htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js || []) { %>
+    <script src="<%=jsurl%>"></script>
+    <% } %>
+
+    <script>
+        (function(doc, win) {
+            const docEl = doc.documentElement
+            const resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize'
+            const isMobile = /iPhone|Android|iOS|iPad|iPod/i.test(navigator.userAgent);
+            const designWidth = isMobile ? 375 : 1920;
+            const minWidth = isMobile ? 0 : 1200;
+            const maxWidth = isMobile ? 1200 : 1920;
+            const host = window.location.hostname;
+
+            function recalc() {
+                let clientWidth = docEl.clientWidth
+                if (clientWidth > maxWidth) {
+                    clientWidth = maxWidth;
+                } else if (clientWidth < minWidth) {
+                    clientWidth = minWidth;
+                }
+                docEl.style.fontSize = (100 * clientWidth / designWidth) + 'px'
+            }
+
+            if (!doc.addEventListener) return
+            win.addEventListener(resizeEvt, recalc, false)
+            doc.addEventListener('DOMContentLoaded', recalc, false)
+        })(document, window)
+    </script>
+</body>
+
+</html>

@@ -1,8 +1,15 @@
 <template>
 	<div id="app">
 		<router-view />
-		<div class="">
-			<canvas v-if="!isMobile" class="live2d-model" ref="live2dModel" width="250px" height="550px" id="live2dModel"></canvas>
+		<div class>
+			<canvas
+				v-if="!isMobile"
+				class="live2d-model"
+				ref="live2dModel"
+				width="250px"
+				height="550px"
+				id="live2dModel"
+			></canvas>
 		</div>
 	</div>
 </template>
@@ -10,20 +17,44 @@
 <script lang="ts">
 	import { Vue, Component, Watch } from "vue-property-decorator";
 
+	const resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+
 	@Component({})
 	export default class App extends Vue {
-		isMobile = false;
 		models = ['chitose', 'epsilon2_1', 'gf', 'haru-01', 'haru-02', 'haruto', 'hibiki', 'hijiki', 'izumi', 'koharu', 'miku', 'ni-j', 'nico', 'nietzsche', 'nipsilon', 'nito', 'shizuku', 'tororo', 'tsumiki', 'unitychan', 'wanko', 'z16',];
 		cdnPrefix = 'https://cdn.jsdelivr.net/gh/QiShaoXuan/live2DModel@1.0.0';
+
+		get isMobile() {
+			return this.$store.state.isMobile;
+		}
+
+		set isMobile(isMobile) {
+			this.$store.commit('setIsMobile', isMobile);
+		}
 
 		@Watch("$route")
 		onRouteChange(to: any, from: any) {
 			this.initModelPath();
 		}
 
+
 		mounted() {
-			this.isMobile = document.documentElement.offsetWidth < 900;
+			this.listenerResize();
 			this.initModelPath();
+		}
+
+		destroyed() {
+			window.removeEventListener(resizeEvt, this.handleResize, false);
+		}
+
+		listenerResize() {
+			this.handleResize();
+			window.addEventListener(resizeEvt, this.handleResize, false);
+		}
+
+		handleResize() {
+			const docEl = document.documentElement
+			this.isMobile = /iPhone|Android|iOS|iPad|iPod/i.test(navigator.userAgent) || docEl.clientWidth < 900;
 		}
 
 		initModelPath() {

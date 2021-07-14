@@ -33,51 +33,56 @@
 </template>
 
 <script lang="ts">
-	import { Vue, Component, Prop } from 'vue-property-decorator'
-	import { menus } from '@/router/config'
+import { Vue, Component, Prop } from 'vue-property-decorator'
+import { menus } from '@/router/config'
 
 
-	@Component({})
-	export default class Side extends Vue {
-		activeRoute = '';
-		menus = menus;
+@Component({})
+export default class Side extends Vue {
+	activeRoute = '';
+	menus = menus;
 
-		@Prop() isCollapse!: boolean;
+	@Prop() isCollapse!: boolean;
 
-		mounted() {
-			this.activeRoute = this.$route.path;
-		}
+	mounted() {
+		this.activeRoute = this.$route.path;
+	}
 
-		handleOpen() {
+	handleOpen() {
 
-		}
+	}
 
-		handleClose() {
+	handleClose() {
 
-		}
+	}
 
-		handleSelectMenu(path: string) {
-			if (this.$route.path !== path) {
-				this.$router.push(path);
-			}
+	handleSelectMenu(path: string) {
+		if (this.$route.path !== path) {
+			this.$router.push(path);
 		}
 	}
+}
 </script>
 
 <style lang="scss" scoped>
-	.side {
-		position: relative;
-		height: 100%;
-		box-shadow: 0 0 10px #eee;
-		.menu:not(.el-menu--collapse) {
-			width: 200px;
-			min-height: 400px;
-		}
-		.el-menu {
-			height: 100%;
-			background: none;
-			border-right: none;
-			// box-shadow: 0 0 10px #eee;
-		}
+.side {
+	position: relative;
+	height: 100%;
+	box-shadow: 0 0 10px #eee;
+	background: white;
+
+	.menu:not(.el-menu--collapse) {
+		width: 200px;
+		min-height: 400px;
 	}
+	.el-menu {
+		height: 100%;
+		background: none;
+		border-right: none;
+		// box-shadow: 0 0 10px #eee;
+	}
+
+	@media screen and (max-width: 900px) {
+	}
+}
 </style>

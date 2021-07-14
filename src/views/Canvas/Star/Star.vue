@@ -25,11 +25,17 @@
 <style lang="scss">
 	.Star {
 		height: 100%;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-around;
 		.canvas-wrapper {
-			box-shadow: 0 0 10px rgb(228, 227, 227);
-			border-radius: 6px;
-			width: 500px;
-			height: 500px;
+			margin: 0.1rem 0;
+			box-shadow: 0 0 0.1rem rgb(228, 227, 227);
+			border-radius: 0.06rem;
+			width: 5rem;
+			height: 5rem;
+
 			canvas {
 				width: 100%;
 				height: 100%;

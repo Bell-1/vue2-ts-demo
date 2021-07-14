@@ -1,0 +1,42 @@
+//主色
+$color-primary: #02e9dd;
+
+//功能色
+$color-success: #67C23A;
+$color-danger: #DE4436;
+$color-warning:#F1AB3E;
+$color-info: #909399;
+
+//文字色
+$color-text-title: #1A1A1A;
+$color-text-primary: #333333;
+$color-text-regular: #666666;
+$color-text-secondary: #909399;
+$color-text-Placeholder: #C0C4CC;
+
+//边框色
+$border-color-base: #DCDFE6;
+$border-color-light: #E4E7ED;
+$border-color-lighter: #EBEEF5;
+$border-color-extralight: #F2F6FC;
+$border-color-black: #1A1A1A;
+
+//背景色
+$color-white: #FFFFFF;
+$color-black: #000000;
+$background-color-base: #F5F7FA;
+$background-color-gray: #DCDFE6;
+$background-color-black: #333;
+
+//阴影
+$color-mask: rgba(0, 0, 0, .3);
+$color-shadow: rgba(26, 26, 26, .06);
+
+$box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
+
+
+$xs: 768px;
+$app-min-width: 980px;
+$max-container: 1200px;
+$max-container-small: 960px;
+$header-height: 60px;

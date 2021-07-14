@@ -57,7 +57,7 @@
 					</el-radio-group>
 				</el-form-item>
 				<div class="login-btn-row">
-					<div class="btn blue" @click="handleRegist">注册</div></a>
+					<div class="btn blue" @click="handleRegist">注册</div>
 					<div class="btn text" @click="handleToggleShowForm(1)">返回</div>
 				</div>
 			</el-form>
@@ -67,217 +67,79 @@
 
 
 <script lang="ts">
-	import { Vue, Component } from 'vue-property-decorator'
-	import { Mutation, Action } from 'vuex-class'
-	import { phoneRule, passwordRule, emptyRule, emailRule } from '@/utils/verify'
-	
-	@Component
-	export default class Login extends Vue {
-		form: any = {
-			phone: "15372999761",
-			pwd: "123456"
-		}
+import { Vue, Component } from 'vue-property-decorator'
+import { Mutation, Action } from 'vuex-class'
+import { phoneRule, passwordRule, emptyRule, emailRule } from '@/utils/verify'
 
-		registForm: any = {
-			phone: '',
-			name: '',
-			email: '',
-			pwd: '',
-			gender: 1,
-		}
+@Component
+export default class Login extends Vue {
+	form: any = {
+		phone: "15372999761",
+		pwd: "123456"
+	}
 
-		genderOpetions: object[] = [
-			{ value: 1, label: '男' },
-			{ value: 2, label: '女' }
-		]
+	registForm: any = {
+		phone: '',
+		name: '',
+		email: '',
+		pwd: '',
+		gender: 1,
+	}
 
-		rules: any = {
-			name: [emptyRule('名称')],
-			phone: [phoneRule()],
-			email: [emailRule()],
-			pwd: [passwordRule()],
+	genderOpetions: object[] = [
+		{ value: 1, label: '男' },
+		{ value: 2, label: '女' }
+	]
 
-		}
+	rules: any = {
+		name: [emptyRule('名称')],
+		phone: [phoneRule()],
+		email: [emailRule()],
+		pwd: [passwordRule()],
 
-		showForm: number = 1;
+	}
 
-		@Action('admin/login') login: any
-		@Action('admin/register') register: any
+	showForm: number = 1;
 
-		async handleLogin() {
-			try {
-				const el: any = this.$refs['loginForm']
-				await el.validate();
-				await this.login({ ...this.form });
-				this.$router.push('/app/home');
-				this.$message.success({
-					message: '登陆成功',
-					offset: 60,
-				})
-			} catch (error) {
-				console.log(error)
-			}
-		}
+	@Action('admin/login') login: any
+	@Action('admin/register') register: any
 
-		handleToggleShowForm(index: number = 1) {
-			this.showForm = index;
-			const el: any = index === 1 ? this.$refs['registForm'] : this.$refs['loginForm'];
-			el.clearValidate();
-		}
-
-		async handleRegist() {
-			try {
-				const el: any = this.$refs['registForm']
-				await el.validate();
-				await this.register(this.registForm);
-				this.$message.success({
-					message: '注册成功',
-					offset: 60,
-				})
-				this.handleToggleShowForm(1);
-			} catch (error) {
-				console.log(error)
-			}
+	async handleLogin() {
+		try {
+			const el: any = this.$refs['loginForm']
+			await el.validate();
+			await this.login({ ...this.form });
+			this.$router.push('/app/home');
+			this.$message.success({
+				message: '登陆成功',
+				offset: 60,
+			})
+		} catch (error) {
+			console.log(error)
 		}
 	}
+
+	handleToggleShowForm(index: number = 1) {
+		this.showForm = index;
+		const el: any = index === 1 ? this.$refs['registForm'] : this.$refs['loginForm'];
+		el.clearValidate();
+	}
+
+	async handleRegist() {
+		try {
+			const el: any = this.$refs['registForm']
+			await el.validate();
+			await this.register(this.registForm);
+			this.$message.success({
+				message: '注册成功',
+				offset: 60,
+			})
+			this.handleToggleShowForm(1);
+		} catch (error) {
+			console.log(error)
+		}
+	}
+}
 </script>
 
-<style lang="scss">
-	.Login {
-		width: 100vw;
-		height: 100vh;
-		background-image: linear-gradient(26deg, #f6f6f6, #acf0cb 60%, rgb(143, 233, 188) 80%, #298ee0);
-		&:before {
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			content: '';
-			filter: opacity(0.4);
-			background: linear-gradient(-30deg, #438383, #0ac2fa 40%, #c4acf1 80%, #fdf4e4);
-		}
-		.box {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			padding: 30px 30px;
-			width: 300px;
-			border-radius: 20px;
-			backface-visibility: hidden;
-			box-shadow: 6px 6px 12px rgba(#4a8394, 0.6), -6px -6px 12px rgba(228, 249, 255, 0.5);
-			border-radius: 20px;
-			transition: all 1s;
-			color: #f6f6f6;
-			opacity: 1;
-
-			&.show {
-				transform: translate(-50%, -50%) rotateY(0deg);
-			}
-
-			&.hide {
-				transform: translate(-50%, -50%) rotateY(180deg);
-				opacity: 0;
-			}
-
-			.title {
-				font-size: 26px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				padding-bottom: 20px;
-			}
-
-			.el-form-item {
-				margin-bottom: 30px;
-			}
-
-			.el-form-item__error {
-				//验证提示样式
-				color: #f78a8a;
-				padding: 5px 20px;
-			}
-
-			input {
-				padding: 0 20px;
-				height: 40px;
-				background: none;
-				color: #f6f6f6;
-				border: none;
-				border-radius: 20px;
-				text-align: center;
-				box-shadow: inset 2px 2px 4px rgba(#4a8394, 0.8), inset -2px -2px 4px rgba(228, 249, 255, 0.5);
-				font-size: 16px;
-
-				&::placeholder {
-					color: #f6f6f6;
-				}
-			}
-
-			.el-radio-group {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				flex: 1;
-
-				label {
-					width: 80%;
-
-					span:first-of-type {
-						display: none;
-					}
-
-					span:last-of-type {
-						@extend .btn, .blue;
-						width: 100% !important;
-					}
-
-					&.is-checked {
-						span:last-of-type {
-							@extend .btn:active;
-						}
-					}
-				}
-			}
-
-			.login-btn-row {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-			}
-
-			.btn {
-				width: 60px;
-				height: 30px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				cursor: pointer;
-				transition: all 0.2s;
-
-				&.blue {
-					color: #f6f6f6;
-					border-radius: 20px;
-					box-shadow: 4px 4px 6px rgba(#4a8394, 0.6), -2px -2px 4px rgba(228, 249, 255, 0.5);
-
-					&:hover {
-						color: #949996;
-					}
-
-					&:active {
-						box-shadow: 0 0 0 #4a8394, 0 0 0 rgba(228, 249, 255, 0.5), inset 2px 2px 4px rgba(#4a8394, 0.8),
-							inset -2px -2px 4px rgba(228, 249, 255, 0.5);
-					}
-				}
-
-				&.text {
-					color: #949996;
-
-					&:hover {
-						color: #f6f6f6;
-					}
-				}
-			}
-		}
-	}
-</style>
+<style src="./index.scss" lang="scss"></style>

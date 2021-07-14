@@ -36,6 +36,8 @@ ssh root@vue.beiyunjiang.top
 cd /mnt/code
 tar -czf updateLog/vue-$(date +%Y%m%d%H%M%S).tar.gz vue
 rm -rf vue
-rar x vue-new.rar ./vue-new/
-mv vue-new/dist ./vue/
+mv vue-new ./vue/
 rm -rf  vue-new*
+
+## rar
+rar x vue-new.rar ./vue-new/

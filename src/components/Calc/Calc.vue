@@ -135,27 +135,27 @@
 	$bg-l: rgb(242, 243, 247);
 	$color: rgb(247, 140, 97);
 	.Calc {
-		margin: 30px;
-		padding: 30px;
+		// margin: 0.3rem;
+		padding: 0.15rem;
 		background: $bg;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		width: 350px;
-		box-shadow: 6px 6px 24px $bg-d, -6px -6px 24px $bg-l;
-		border-radius: 10px;
+		width: 3.5rem;
+		box-shadow: 0.06rem 0.06rem 0.24rem $bg-d, -0.06rem -0.06rem 0.24rem $bg-l;
+		border-radius: 0.1rem;
 		color: $color;
-		font-size: 19px;
+		font-size: 0.19rem;
 		font-weight: bold;
 		user-select: none;
 		.input {
-			padding: 0 15px;
-			margin-bottom: 30px;
+			padding: 0 0.15rem;
+			margin-bottom: 0.3rem;
 			width: 100%;
-			height: 50px;
-			border-radius: 10px;
-			box-shadow: inset 3px 3px 6px $bg-d, inset -3px -3px 6px $bg-l;
+			height: 0.5rem;
+			border-radius: 0.1rem;
+			box-shadow: inset 0.03rem 0.03rem 0.06rem $bg-d, inset -0.03rem -0.03rem 0.06rem $bg-l;
 			.content {
 				height: 100%;
 				width: 100%;
@@ -165,36 +165,36 @@
 				overflow: hidden;
 				transition: font-size 0.3s;
 				&.small {
-					font-size: 15px;
+					font-size: 0.15rem;
 					font-weight: none;
 				}
 
 				&.mini {
-					font-size: 12px;
+					font-size: 0.12rem;
 					font-weight: none;
 				}
 			}
 		}
 		.btns {
-			width: 285px;
+			width: 2.85rem;
 			position: relative;
 			display: flex;
 			flex-wrap: wrap;
 			.number {
-				margin: 0 15px 15px 0;
-				width: 60px;
-				height: 60px;
+				margin: 0 0.15rem 0.15rem 0;
+				width: 0.6rem;
+				height: 0.6rem;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				border-radius: 50%;
-				box-shadow: 6px 6px 12px $bg-d, -6px -6px 12px $bg-l;
+				box-shadow: 0.06rem 0.06rem 0.12rem $bg-d, -0.06rem -0.06rem 0.12rem $bg-l;
 				transition: box-shadow 0.2s;
 				cursor: pointer;
 
 				&:active {
-					box-shadow: 6px 6px 12px $bg-d, -6px -6px 12px $bg-l,
-						inset 3px 3px 12px $bg-d, inset -3px -3px 12px $bg-l;
+					box-shadow: 0.06rem 0.06rem 0.12rem $bg-d, -0.06rem -0.06rem 0.12rem $bg-l,
+						inset 0.03rem 0.03rem 0.12rem $bg-d, inset -0.03rem -0.03rem 0.12rem $bg-l;
 				}
 				&:hover {
 					color: lighten($color, 5%);
@@ -206,13 +206,13 @@
 					position: absolute;
 					right: 0;
 					bottom: 0;
-					height: 135px;
-					border-radius: 30px;
+					height: 1.35rem;
+					border-radius: 0.3rem;
 				}
 				&.row-double {
 					position: relative;
-					width: 135px;
-					border-radius: 30px;
+					width: 1.35rem;
+					border-radius: 0.3rem;
 				}
 			}
 		}

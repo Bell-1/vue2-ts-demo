@@ -1,38 +1,18 @@
 <template>
 	<div class="square">
 		<div class="content">
-			<div
-				class="row"
-				v-for="(row, index) of list"
-				:key="index"
-			>
-				<div
-					class="item"
-					:class="{active: item === active}"
-					v-for="item of row"
-					:key="item"
-				>{{item}}</div>
+			<div class="row" v-for="(row, index) of list" :key="index">
+				<div class="item" :class="{active: item === active}" v-for="item of row" :key="item">{{item}}</div>
 			</div>
 			<div class="middle">
-				<div class="prize">
-					{{prize && `恭喜你抽中了 ${prize}` || ''}}
-				</div>
-				<div
-					class="start"
-					@click="start"
-				>
-					点击抽奖
-				</div>
+				<div class="prize">{{prize && `恭喜你抽中了 ${prize}` || ''}}</div>
+				<div class="start" @click="start">点击抽奖</div>
 			</div>
 		</div>
 
 		<div class="record">
-			<div class="">抽奖记录</div>
-			<div
-				class=""
-				v-for="(v, index) of record"
-				:key="index"
-			>第{{record.length - index}}次: {{v}}</div>
+			<div class>抽奖记录</div>
+			<div class v-for="(v, index) of record" :key="index">第{{record.length - index}}次: {{v}}</div>
 		</div>
 	</div>
 </template>
@@ -44,10 +24,10 @@
 	@Component({})
 	export default class Square extends Vue {
 		list: string[][] = [
-			['项链', '手镯', '花', '手机', '毛绒玩具'],
+			['项链', '手镯', '花', '手机', '娃娃'],
 			['衣服', '鞋子'],
 			['裤子', '不要'],
-			['口红', '香水', '包包', '520红包', '1块也是爱']
+			['口红', '香水', '包包', '520', '1']
 		];
 		active: string = '';
 		prize: string = '';
@@ -98,7 +78,7 @@
 				this.speed -= 20;
 			}
 			if (list.length <= 15) {
-				this.speed += speed < 260 ? 20 : 100*(5-list.length);
+				this.speed += speed < 260 ? 20 : 100 * (5 - list.length);
 			}
 			setTimeout(() => {
 				this.active = list.shift() || '';
@@ -119,12 +99,17 @@
 	.square {
 		.content {
 			position: relative;
-			width: 480px;
-			height: 380px;
+			width: 4.8rem;
+			height: 3.8rem;
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
 			user-select: none;
+			@media screen and (max-width: 900px) {
+				width: 3rem;
+				height: 2.5rem;
+				font-size: 0.12rem;
+			}
 			.row {
 				width: 100%;
 				display: flex;
@@ -132,13 +117,17 @@
 				justify-content: space-between;
 			}
 			.item {
-				width: 80px;
-				height: 80px;
+				width: 0.8rem;
+				height: 0.8rem;
 				background: rgb(206, 248, 250);
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				border-radius: 4px;
+				border-radius: 0.04rem;
+				@media screen and (max-width: 900px) {
+					width: 0.5rem;
+					height: 0.5rem;
+				}
 				&.active {
 					background: rgb(255, 145, 145);
 				}
@@ -153,22 +142,24 @@
 				align-items: center;
 				justify-content: center;
 				flex-direction: column;
+				
 				.start {
 					background: rgb(241, 188, 188);
-					width: 120px;
-					height: 50px;
+					width: 1.2rem;
+					height: 0.5rem;
 					display: flex;
 					align-items: center;
 					justify-content: center;
 					color: white;
-					border-radius: 10px;
+					border-radius: 0.1rem;
 					cursor: pointer;
 					&:active {
-						box-shadow: inset 3px 3px 6px rgb(201, 178, 178), inset -3px -3px 6px rgb(255, 237, 237);
+						box-shadow: inset 0.03rem 0.03rem 0.06rem rgb(201, 178, 178),
+							inset -0.03rem -0.03rem 0.06rem rgb(255, 237, 237);
 					}
 				}
 				.prize {
-					height: 50px;
+					height: 0.5rem;
 					display: flex;
 					align-items: center;
 					justify-content: center;
@@ -177,9 +168,9 @@
 			}
 		}
 		.record {
-			margin-top: 30px;
+			margin-top: 0.3rem;
 			div {
-				margin-bottom: 15px;
+				margin-bottom: 0.15rem;
 			}
 		}
 	}

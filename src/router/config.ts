@@ -48,7 +48,7 @@ export const routers: Route[] = [
 	{ path: '/bloodsugar', component: getComponents('BloodSugar'), title: 'BloodSugar', icon: 'iconfont icon-star' },
 	{
 		path: '/app',
-		component: getComponents('Content'),
+		component: getComponents('Layout'),
 		children: [...menus]
 	},
 	...others,

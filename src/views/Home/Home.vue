@@ -22,9 +22,8 @@
 
 		mounted() {
 		}
-		changeColor(e:any) {
-			console.log(e.target.value)
-		}
+
+
 
 	}
 </script>
@@ -45,13 +44,17 @@
 			display: flex;
 			div {
 				position: relative;
-				font-size: 100px;
+				font-size: 1rem;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				font-weight: bold;
 				color: transparent;
-				-webkit-text-stroke: 1px rgb(168, 240, 233);
+				-webkit-text-stroke: 0.01rem rgb(168, 240, 233);
+
+				@media screen and (max-width: 900px) {
+					font-size: 0.7rem;	
+				}
 
 				&::before {
 					position: absolute;

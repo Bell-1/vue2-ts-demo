@@ -7,12 +7,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    http: null,
+	http: null,
+	isMobile: false,
   },
   mutations: {
     setHttp(state: any, http) {
       state.http = http;
-    }
+	},
+	setIsMobile(state:any, isMobile){
+		state.isMobile = isMobile;
+	}
   },
   actions: {
   },
