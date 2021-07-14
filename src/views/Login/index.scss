@@ -89,13 +89,13 @@
 
                 span:last-of-type {
                     @extend .btn,
-                    .blue;
+                    .btn.submit;
                     width: 100% !important;
                 }
 
                 &.is-checked {
                     span:last-of-type {
-                        @extend .btn:active;
+                        @extend .btn.submit:active;
                     }
                 }
             }
@@ -116,18 +116,21 @@
             cursor: pointer;
             transition: all 0.2s;
 
-            &.blue {
-                color: #f6f6f6;
+            &.submit {
+                color: #F6F6F6;
                 border-radius: 20px;
-                box-shadow: 4px 4px 6px rgba(#000000, 0.6), -2px -2px 4px rgba(255, 255, 255, 0.5);
+                box-shadow: 4px 4px 6px rgba(#000000, 0.6),
+                    -2px -2px 4px rgba(255, 255, 255, 0.5);
 
                 &:hover {
                     color: #949996;
                 }
 
                 &:active {
-                    box-shadow: 0 0 0 #ffffff, 0 0 0 rgba(255, 255, 255, 0.5), inset 2px 2px 4px rgba(#000000, 0.8),
-                        inset -2px -2px 4px rgba(0, 0, 0, 0.5);
+                    box-shadow: 0 0 0 #FFFFFF,
+                        0 0 0 rgba(255, 255, 255, 0.5),
+                        inset 2px 2px 4px rgba(#000000, 0.8),
+                        inset -2px -2px 4px rgba(255, 255, 255, 0.5);
                 }
             }
 

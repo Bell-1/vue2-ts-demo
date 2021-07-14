@@ -11,20 +11,20 @@
 			<template v-for="route of menus">
 				<template v-if="route.children">
 					<el-submenu :index="route.path" :key="route.path">
-						<template slot="title">
-							<i :class="route.icon"></i>
-							<span>{{route.title}}</span>
+						<template #title>
+							<i :class="route.meta.icon"></i>
+							<span>{{route.name}}</span>
 						</template>
 						<el-menu-item v-for="route of route.children" :key="route.path" :index="route.path">
-							<i :class="route.icon"></i>
-							<span slot="title">{{route.title}}</span>
+							<i :class="route.meta.icon"></i>
+							<span slot="title">{{route.name}}</span>
 						</el-menu-item>
 					</el-submenu>
 				</template>
 				<template v-else>
 					<el-menu-item :index="route.path" :key="route.path">
-						<i :class="route.icon"></i>
-						<span slot="title">{{route.title}}</span>
+						<i :class="route.meta.icon"></i>
+						<span slot="title">{{route.name}}</span>
 					</el-menu-item>
 				</template>
 			</template>

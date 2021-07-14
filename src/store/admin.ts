@@ -6,9 +6,11 @@ export default {
 		userInfo: !!userInfo ? JSON.parse(userInfo) : null,
 	},
 	mutations: {
-		setUserInfo(state: any, userInfo: any) {
+		setUserInfo(this: any, state: any, userInfo: any) {
+			console.log(121212, userInfo)
+			this.state.http.setHeaders('token', userInfo.token);
 			localStorage.setItem('userInfo', JSON.stringify(userInfo))
-			localStorage.setItem('token', userInfo.token)
+			// localStorage.setItem('token', userInfo.token)
 			state.userInfo = userInfo;
 		},
 
@@ -23,7 +25,7 @@ export default {
 		login({ commit, rootState }: any, data: any) {
 			return new Promise(async (resolve: any, reject: any) => {
 				try {
-					let {http} = rootState;
+					let { http } = rootState;
 					const info = await http.request('login', data);
 					commit('setUserInfo', info);
 					resolve(info);

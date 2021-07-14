@@ -28,6 +28,7 @@ const cdn = {
 }
 
 module.exports = {
+    outputDir: 'vue',
     chainWebpack: config => {
         for (let [k, v] of Object.entries(alias)) {
             config.resolve.alias.set(k, v);
@@ -77,6 +78,14 @@ module.exports = {
     },
 
     devServer: {
-        proxy: 'http://localhost:3333'
+        proxy: {
+            '/test': {
+                target: 'http://localhost:3333',
+                changeOrigin: true, // 如果接口跨域，需要进行这个参数配置
+                pathRewrite: {
+                    '^/test': '/'
+                }
+            },
+        }
     }
 }

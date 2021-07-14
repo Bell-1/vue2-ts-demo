@@ -5,10 +5,12 @@ import './BinaryTree'
 
 declare module 'vue/types/vue' {
 	interface Vue {
-		$moment: any,
+		[propName: string]: any;
 	}
 }
 
-interface Window {
-	loadlive2d: any;
+declare global {
+	interface Window {
+		loadlive2d: any;
+	}
 }

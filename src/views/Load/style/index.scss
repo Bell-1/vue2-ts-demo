@@ -1,0 +1,132 @@
+.load-page {
+    display: flex;
+
+    .load-wrap {
+        width: 300px;
+        margin-right: 30px;
+
+        .title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .config {
+            height: 130px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row {
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            label {
+                padding: 0 10px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                &>* {
+                    margin: 2px;
+                }
+            }
+
+            .el-input {
+                width: 150px;
+            }
+
+            .loading {
+                position: relative;
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                background: linear-gradient(rgb(245, 89, 89) 20%, transparent 45%, transparent 55%, rgb(99, 99, 247) 80%);
+                border: none;
+                animation: loading 2s linear infinite;
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                    margin: auto;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 90%;
+                    width: 90%;
+                    background: white;
+                    border-radius: 50%;
+                }
+
+                @keyframes loading {
+                    from {
+                        transform: rotate(0);
+                    }
+
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+        }
+    }
+
+
+    .canvas {
+        border-radius: 10px;
+        background: #0cc;
+    }
+
+    .container {
+        background: #0cc;
+        width: 300px;
+        height: 500px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+
+        .content {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                position: absolute;
+                transform: rotate(-90deg);
+                width: 300px;
+                height: 300px;
+            }
+
+            .t1 {
+                transition: all 1s ease-out;
+            }
+
+            .loading {
+                animation: donut-show-one linear 5s infinite;
+            }
+
+            @keyframes donut-show-one {
+                from {
+                    stroke-dashoffset: 630px;
+                }
+
+                to {
+                    stroke-dashoffset: 0px;
+                }
+            }
+
+            span {
+                color: white;
+                font-size: 30px;
+            }
+        }
+    }
+}

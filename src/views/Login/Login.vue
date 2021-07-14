@@ -3,6 +3,7 @@
 		<div class="box" :class="showForm === 1 ? 'show' : 'hide'">
 			<div class="title">登录</div>
 			<el-form class="form" ref="loginForm" :model="form" :rules="rules">
+				<replace-auto-fill></replace-auto-fill>
 				<el-form-item label label-width="0" prop="phone">
 					<el-input
 						v-model="form.phone"
@@ -21,7 +22,7 @@
 					></el-input>
 				</el-form-item>
 				<div class="login-btn-row">
-					<div class="btn blue" @click="handleLogin">登陆</div>
+					<div class="btn submit" @click="handleLogin">登陆</div>
 					<div class="btn text" @click="handleToggleShowForm(2)">注册</div>
 				</div>
 			</el-form>
@@ -42,22 +43,13 @@
 					<el-input v-model="registForm.pwd" autocomplete="off" placeholder="请输入密码"></el-input>
 				</el-form-item>
 				<el-form-item>
-					<!-- <el-select v-model="registForm.gender">
-						<el-option
-							v-for="item in genderOpetions"
-							:key="item.value"
-							:label="item.label"
-							:value="item.value"
-						></el-option>
-					</el-select>-->
-
 					<el-radio-group v-model="registForm.gender">
 						<el-radio :label="1">男</el-radio>
 						<el-radio :label="2">女</el-radio>
 					</el-radio-group>
 				</el-form-item>
 				<div class="login-btn-row">
-					<div class="btn blue" @click="handleRegist">注册</div>
+					<div class="btn submit" @click="handleRegist">注册</div>
 					<div class="btn text" @click="handleToggleShowForm(1)">返回</div>
 				</div>
 			</el-form>
@@ -70,8 +62,13 @@
 import { Vue, Component } from 'vue-property-decorator'
 import { Mutation, Action } from 'vuex-class'
 import { phoneRule, passwordRule, emptyRule, emailRule } from '@/utils/verify'
+import ReplaceAutoFill from '@/components/ReplaceAutoFill/index.vue'
 
-@Component
+@Component({
+	components: {
+		ReplaceAutoFill
+	}
+})
 export default class Login extends Vue {
 	form: any = {
 		phone: "15372999761",
@@ -96,7 +93,6 @@ export default class Login extends Vue {
 		phone: [phoneRule()],
 		email: [emailRule()],
 		pwd: [passwordRule()],
-
 	}
 
 	showForm: number = 1;
@@ -109,10 +105,10 @@ export default class Login extends Vue {
 			const el: any = this.$refs['loginForm']
 			await el.validate();
 			await this.login({ ...this.form });
-			this.$router.push('/app/home');
+			this.$router.push('/app');
 			this.$message.success({
 				message: '登陆成功',
-				offset: 60,
+				offset: 100,
 			})
 		} catch (error) {
 			console.log(error)
@@ -132,7 +128,7 @@ export default class Login extends Vue {
 			await this.register(this.registForm);
 			this.$message.success({
 				message: '注册成功',
-				offset: 60,
+				offset: 100,
 			})
 			this.handleToggleShowForm(1);
 		} catch (error) {

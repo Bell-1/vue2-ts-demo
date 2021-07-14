@@ -1,3 +1,7 @@
+import Vue, { ComponentOptions, PluginFunction, AsyncComponent } from 'vue'
+
+type Component = ComponentOptions<Vue> | typeof Vue | AsyncComponent
+
 const all: any = {
 	NotFound: () => import('@/views/NotFound/NotFound.vue'), //404
 	Login: () => import('@/views/Login/Login.vue'), //登录
@@ -28,6 +32,6 @@ const all: any = {
 }
 
 
-export function getComponents(name: string) {
+export function getComponents(name: string): Component {
 	return all[name] ? all[name] : all['NotFound'];
 }
