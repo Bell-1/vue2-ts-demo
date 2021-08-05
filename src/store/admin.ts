@@ -22,17 +22,12 @@ export default {
 
 	},
 	actions: {
-		login({ commit, rootState }: any, data: any) {
-			return new Promise(async (resolve: any, reject: any) => {
-				try {
-					let { http } = rootState;
-					const info = await http.request('login', data);
-					commit('setUserInfo', info);
-					resolve(info);
-				} catch (error) {
-					reject();
-				}
-			})
+		async login({ commit, rootState }: any, data: any) {
+			let { http } = rootState;
+			console.log(http.getApi('login'))
+			const info = await rootState.http.request('login', data);
+			commit('setUserInfo', info);
+			return info
 		},
 
 		register({ commit, rootState }: any, data: any) {

@@ -5,16 +5,16 @@
 </template>
 
 <script lang="ts">
-	import { Vue, Component, Prop } from 'vue-property-decorator'
+import { Vue, Component, Prop } from 'vue-property-decorator'
 
-	import Calc from '@/components/Calc/Calc.vue'
+import Calc from '@/components/Calc/Calc.vue'
 
-	@Component({
-		components: {
-			Calc
-		}
-	})
-	export default class Calculate extends Vue {
-		amount: string = '';
+@Component({
+	components: {
+		Calc
 	}
+})
+export default class Calculate extends Vue {
+	amount: string = '';
+}
 </script>

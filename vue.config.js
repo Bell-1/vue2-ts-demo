@@ -6,6 +6,11 @@ const alias = {
     '@': resolve('src'),
 }
 
+const proxyConfig = {
+    local: 'http://localhost:3333/',
+    serve: 'https://vue.beiyunjiang.top/api/'
+}
+
 const cdn = {
     // 忽略打包的第三方库
     externals: {
@@ -25,6 +30,21 @@ const cdn = {
         'https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js',
     ],
     css: []
+}
+
+function getProxyConfig() {
+    const proxy = {}
+    Object.keys(proxyConfig).forEach(key => {
+        proxy[key] = {
+            target: proxyConfig[key],
+            changeOrigin: true,
+            pathRewrite: {
+                [`^/${key}`]: '/',
+            }
+        }
+    })
+
+    return proxy;
 }
 
 module.exports = {
@@ -78,14 +98,6 @@ module.exports = {
     },
 
     devServer: {
-        proxy: {
-            '/test': {
-                target: 'http://localhost:3333',
-                changeOrigin: true, // 如果接口跨域，需要进行这个参数配置
-                pathRewrite: {
-                    '^/test': '/'
-                }
-            },
-        }
+        proxy: getProxyConfig()
     }
 }

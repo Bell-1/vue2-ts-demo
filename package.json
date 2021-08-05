@@ -11,7 +11,7 @@
     "dependencies": {
         "axios": "^0.19.2",
         "core-js": "^3.6.4",
-        "cover-axios": "^0.1.6",
+        "cover-axios": "^0.2.3",
         "echarts": "^4.6.0",
         "element-ui": "^2.13.0",
         "html2canvas": "^1.0.0-rc.5",

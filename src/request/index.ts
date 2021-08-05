@@ -12,7 +12,7 @@ function install(Vue: any, opts: { store?: Store<any> }) {
 
 	if (process.env.NODE_ENV === 'development') {
 		// 本地代理指向配置 根据自己的环境配置
-		http.setBaseURL('/test');
+		http.setBaseURL('/local');
 	}
 
 	if (ApiList && Array.isArray(ApiList)) {
@@ -32,6 +32,7 @@ function install(Vue: any, opts: { store?: Store<any> }) {
 		add: addCoverCode,
 		remove: removeCoverCode
 	}
+
 }
 
 
