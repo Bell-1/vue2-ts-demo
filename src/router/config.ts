@@ -3,7 +3,7 @@ import { getComponents } from './all'
 
 export const menus: RouteConfig[] = [
 	{ path: '/app/home', component: getComponents('Home'), name: 'Home', meta: { icon: 'el-icon-s-home' } },
-	{ path: '/app/dashboard', component: getComponents('Dashboard'), name: 'Chart', meta: { icon: 'el-icon-s-marketing' } },
+	// { path: '/app/dashboard', component: getComponents('Dashboard'), name: 'Chart', meta: { icon: 'el-icon-s-marketing' } },
 	{
 		path: '/app/canvas', component: getComponents('Canvas'), name: 'Canvas', meta: { icon: 'el-icon-picture-outline}' },
 		children: [

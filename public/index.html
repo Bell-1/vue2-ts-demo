@@ -16,7 +16,6 @@
     </noscript>
     <div id="app"></div>
 
-    <script src='/yett.min.js'></script>
     <% for (var jsurl of htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js || []) { %>
     <script src="<%=jsurl%>"></script>
     <% } %>
