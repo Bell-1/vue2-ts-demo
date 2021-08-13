@@ -43,6 +43,6 @@
     "exclude": [
         "node_modules",
         "vue",
-        "src/**/*.js"
+        "src/utils/live2d/*"
     ]
 }

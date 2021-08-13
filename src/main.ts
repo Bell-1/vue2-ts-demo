@@ -10,7 +10,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 import 'normalize.css'
 import '@/style/index.scss'
 
-import '@/utils/live2d/live2d'
+import '@/utils/live2d/live2d';
 
 Vue.use(ElementUI);
 Vue.use(ECharts);

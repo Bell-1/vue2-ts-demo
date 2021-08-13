@@ -8,7 +8,7 @@ const alias = {
 
 const proxyConfig = {
     local: 'http://localhost:3333/',
-    serve: 'https://vue.beiyunjiang.top/api/'
+    serve: 'https://vue.beiyunjiang.top/'
 }
 
 const cdn = {
