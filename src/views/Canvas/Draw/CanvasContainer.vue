@@ -59,7 +59,6 @@
 		}
 
 		changeMouseType(type: string) {
-			console.error(type)
 			if (this.cursor !== type) {
 				this.cursor = type;
 			}
