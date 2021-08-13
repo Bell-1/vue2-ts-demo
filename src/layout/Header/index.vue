@@ -26,98 +26,41 @@
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop, Emit } from 'vue-property-decorator'
-import { Action, namespace, State } from 'vuex-class'
+	import { Vue, Component, Prop, Emit } from 'vue-property-decorator'
+	import { Action, namespace, State } from 'vuex-class'
 
-const adminStore = namespace('admin');
-const weatherStore = namespace('weather');
+	const adminStore = namespace('admin');
+	const weatherStore = namespace('weather');
 
-@Component({})
-export default class Header extends Vue {
-	@weatherStore.State('now') nowWeather
-	@adminStore.State('userInfo') userInfo
-	@State('isMobile') isMobile
+	@Component({})
+	export default class Header extends Vue {
+		@weatherStore.State('now') nowWeather
+		@adminStore.State('userInfo') userInfo
+		@State('isMobile') isMobile
 
-	mounted() {
-		this.fetchWeather();
-	}
-
-
-	@adminStore.Action('logout') logout: any;
-	@weatherStore.Action('fetchWeather') fetchWeather: any
-
-	@Emit('toogleCollpase')
-	handleCollpase() { }
-
-	async handleLogout() {
-		try {
-			await this.logout();
-			this.$message.success('已退出');
-			this.$router.push('/login');
-		} catch (error) {
-			console.log('退出登录', error)
+		mounted() {
+			this.fetchWeather();
 		}
-	}
 
-}
+
+		@adminStore.Action('logout') logout: any;
+		@weatherStore.Action('fetchWeather') fetchWeather: any
+
+		@Emit('toogleCollpase')
+		handleCollpase() { }
+
+		async handleLogout() {
+			try {
+				await this.logout();
+				this.$message.success('已退出');
+				this.$router.push('/login');
+			} catch (error) {
+				console.log('退出登录', error)
+			}
+		}
+
+	}
 </script>
 
-<style lang="scss" scoped>
-.Header {
-	padding-right: 20px;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	border-bottom: solid 1px #e6e6e6;
-	background: #a9a9a9;
-	.menu-icon {
-		padding: 0 0.15rem;
-		i {
-			font-size: 0.4rem;
-		}
-	}
-	.logo {
-		height: 100%;
-		img {
-			height: 100%;
-			filter: grayscale(1);
-		}
-	}
-	.right {
-		display: flex;
-		align-items: center;
-		.weather {
-			display: flex;
-			align-items: center;
-			padding: 0 10px;
-			cursor: pointer;
-
-			.code {
-				width: 17px;
-			}
-			.c {
-				font-size: 12px;
-				margin-left: 7px;
-			}
-		}
-		.el-menu {
-			border: none;
-			height: 99%;
-			background: none;
-			.el-menu-item {
-				color: white;
-				margin-left: 15px;
-				background: transparent !important;
-				user-select: none;
-				i {
-					color: white;
-				}
-				&:hover {
-					background: none;
-				}
-			}
-		}
-	}
-}
+<style lang="scss" src="./index.scss">
 </style>

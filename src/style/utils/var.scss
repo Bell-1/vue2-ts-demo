@@ -1,11 +1,8 @@
-//主色
-$color-primary: #02e9dd;
-
-//功能色
-$color-success: #67C23A;
-$color-danger: #DE4436;
-$color-warning:#F1AB3E;
-$color-info: #909399;
+$color-primary: rgb(164, 187, 250);
+$color-success: rgba(121, 223, 111,1);
+$color-danger: rgba(245, 125, 117, 1);
+$color-warning:rgba(240, 199, 86,1);
+$color-info: rgba(113, 221, 224, 1);
 
 //文字色
 $color-text-title: #1A1A1A;
@@ -24,6 +21,7 @@ $border-color-black: #1A1A1A;
 //背景色
 $color-white: #FFFFFF;
 $color-black: #000000;
+$color-gray: #909090;
 $background-color-base: #F5F7FA;
 $background-color-gray: #DCDFE6;
 $background-color-black: #333;

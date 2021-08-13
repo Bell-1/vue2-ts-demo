@@ -1,7 +1,7 @@
 <template>
 	<div class="Draw" :class="{edit: isEdit}">
-		<el-button size="mini" type="primary" @click="handleEdit" v-show="!isEdit">编辑</el-button>
-		<div class="cancel-btn" @click="handleCancel" v-show="isEdit">取消</div>
+		<b-btn type="primary" @click="handleEdit" v-show="!isEdit">编辑</b-btn>
+		<b-btn class="cancel-btn" @click="handleCancel" v-show="isEdit">取消</b-btn>
 		<template v-if="isEdit">
 			<canvas-container></canvas-container>
 		</template>
@@ -35,7 +35,9 @@
 	.Draw {
 		height: 100%;
 		width: 100%;
-		background: #FFF;
+		background: #fff;
+		display: flex;
+		align-items: flex-start;
 		&.edit {
 			position: fixed;
 			left: 0;

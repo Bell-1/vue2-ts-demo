@@ -21,34 +21,29 @@
 		</div>
 
 		<div class="row flex wrap start">
-			<b-btn class="item" type="default" icon="el-icon-upload" radius></b-btn>
-			<b-btn class="item" type="info" icon="el-icon-info" radius></b-btn>
-			<b-btn class="item" type="primary" icon="el-icon-check" radius></b-btn>
-			<b-btn class="item" type="success" icon="el-icon-star-on" radius></b-btn>
-			<b-btn class="item" type="warning" icon="el-icon-warning-outline" radius></b-btn>
-			<b-btn class="item" type="danger" icon="el-icon-error" radius></b-btn>
+			<b-btn class="item" type="default" icon="el-icon-upload" radius :size="size"></b-btn>
+			<b-btn class="item" type="info" icon="el-icon-info" radius :size="size"></b-btn>
+			<b-btn class="item" type="primary" icon="el-icon-check" radius :size="size"></b-btn>
+			<b-btn class="item" type="success" icon="el-icon-star-on" radius :size="size"></b-btn>
+			<b-btn class="item" type="warning" icon="el-icon-warning-outline" radius :size="size"></b-btn>
+			<b-btn class="item" type="danger" icon="el-icon-error" radius :size="size"></b-btn>
 		</div>
 
 		<div class="row flex wrap start">
-			<b-btn class="item" type="default" round>圆角</b-btn>
-			<b-btn class="item" type="info" round>圆角</b-btn>
-			<b-btn class="item" type="primary" icon="el-icon-download" round>下载</b-btn>
-			<b-btn class="item" type="success" icon="el-icon-check" round>确定</b-btn>
-			<b-btn class="item" type="warning" round>圆角</b-btn>
-			<b-btn class="item" type="danger" icon="el-icon-delete" round>删除</b-btn>
+			<b-btn class="item" type="default" round  :size="size">圆角</b-btn>
+			<b-btn class="item" type="info" round  :size="size">圆角</b-btn>
+			<b-btn class="item" type="primary" icon="el-icon-download" round  :size="size">下载</b-btn>
+			<b-btn class="item" type="success" icon="el-icon-check" round  :size="size">确定</b-btn>
+			<b-btn class="item" type="warning" round  :size="size">圆角</b-btn>
+			<b-btn class="item" type="danger" icon="el-icon-delete" round  :size="size">删除</b-btn>
 		</div>
 	</div>
 </template>
 
 <script lang="ts">
 	import { Vue, Component, Prop } from 'vue-property-decorator'
-	import BBtn from './Btn.vue'
 
-	@Component({
-		components: {
-			BBtn
-		}
-	})
+	@Component({})
 	export default class Btns extends Vue {
 		size = 'default';
 	}

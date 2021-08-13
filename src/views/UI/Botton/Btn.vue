@@ -34,10 +34,6 @@
 		get sizeClass() {
 			return sizes.includes(this.size) ? this.size : 'default';
 		}
-
-		mounted() {
-		}
-
 	}
 </script>
 

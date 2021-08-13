@@ -2,7 +2,7 @@
 	<div class="Tooltip">
 		<div
 			class="tool"
-			:class="{active: item.type === type}"
+			:class="{active: item === type}"
 			v-for="item of tools"
 			:key="item.type"
 			@click="handleChange(item)"
@@ -46,13 +46,19 @@
 	import { Vue, Component, Prop } from 'vue-property-decorator'
 	import { Chrome } from 'vue-color'
 
+	interface ToolType {
+		type: string,
+		icon: string,
+		selected: boolean
+	}
+
 	@Component({
 		components: {
 			ChromePicker: Chrome,
 		}
 	})
 	export default class Tooltip extends Vue {
-		tools: any[] = [
+		tools: ToolType[] = [
 			{ type: 'text', icon: 'icon-t', selected: true },
 			{ type: 'pencil', icon: 'icon-pencil', selected: true },
 			{ type: 'arrow', icon: 'icon-arrow-top-right', selected: true },
@@ -66,18 +72,23 @@
 		colors: string[] = ['#FF7676', '#8CFD8C', '#6D6DFF', '#6DF7EF', '#F000F0', "#FFFFFF"];
 		color: string = this.colors[0];
 		colorPickerShow: boolean = false;
-		size: string = 'default';
-		type: string = 'text';
+		size: string = 'mini';
+		type: ToolType | null = null;
 
 
 		get diyColor() {
 			return !this.colors.includes(this.color);
 		}
 
+		created() {
+			this.handleChange(this.tools[1]);
+			this.handleChangeSize(this.sizes[0]);
+		}
+
 		handleChange(item: any) {
 			this.$emit('changeType', item.type);
 			if (item.selected) {
-				this.type = item.type;
+				this.type = item;
 			}
 		}
 

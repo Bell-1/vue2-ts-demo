@@ -1,0 +1,207 @@
+.b-btn {
+    display: inline-block;
+    position: relative;
+    padding: 6px 15px;
+    overflow: hidden;
+    font-size: 14px;
+    border-radius: 6px;
+    border-color: transparent;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+
+    &:not(.radius) i {
+        margin-right: 6px;
+    }
+
+    &.round {
+        border-radius: 50px;
+    }
+
+    &.radius {
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 16px;
+    }
+
+    &.b-btn-mini {
+        padding: 5px 10px;
+        font-size: 12px;
+
+        &.radius {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &.b-btn-small {
+        padding: 4px 12px;
+        font-size: 13px;
+
+        &.radius {
+            width: 25px;
+            height: 25px;
+            font-size: 14px;
+        }
+    }
+
+    &.b-btn-large {
+        padding: 8px 20px;
+        font-size: 16px;
+
+        &.radius {
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+        }
+    }
+
+    &:before,
+    &:after {
+        height: 2px;
+        content: '';
+        position: absolute;
+        transition: all 0.5s;
+        width: 0;
+    }
+
+    &:before {
+        top: 0;
+        left: 0;
+    }
+
+    &:after {
+        bottom: 0;
+        right: 0;
+    }
+
+    &:hover {
+        &:not(.round):not(.radius) {
+
+            &:before,
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+
+    &.b-btn-default {
+        border: 1px solid #dcdfe6;
+        border-color: #dcdfe6;
+        background: $color-white;
+
+        &:before,
+        &:after {
+            background: $color-white;
+        }
+
+        &:hover {
+            background: $color-white;
+        }
+    }
+
+    &.b-btn-primary {
+        color: white;
+        background: $color-primary;
+
+        &:before,
+        &:after {
+            background: $color-primary;
+        }
+
+        &:hover {
+            background: white;
+            color: $color-primary;
+
+            &.round,
+            &.radius {
+                border-color: $color-primary;
+            }
+        }
+    }
+
+    &.b-btn-success {
+        color: white;
+        background: $color-success;
+
+        &:before,
+        &:after {
+            background: $color-success;
+        }
+
+        &:hover {
+            background: white;
+            color: $color-success;
+
+            &.round,
+            &.radius {
+                border-color: $color-success;
+            }
+        }
+    }
+
+    &.b-btn-info {
+        color: white;
+        background: $color-info;
+
+        &:before,
+        &:after {
+            background: $color-info;
+        }
+
+        &:hover {
+            background: white;
+            color: $color-info;
+
+            &.round,
+            &.radius {
+                border-color: $color-info;
+            }
+        }
+    }
+
+    &.b-btn-warning {
+        color: white;
+        background: $color-warning;
+
+        &:before,
+        &:after {
+            background: $color-warning;
+        }
+
+        &:hover {
+            background: white;
+            color: $color-warning;
+
+            &.round,
+            &.radius {
+                border-color: $color-warning;
+            }
+        }
+    }
+
+    &.b-btn-danger {
+        color: white;
+        background: $color-danger;
+
+        &:before,
+        &:after {
+            background: $color-danger;
+        }
+
+        &:hover {
+            background: white;
+            color: $color-danger;
+
+            &.round,
+            &.radius {
+                border-color: $color-danger;
+            }
+        }
+    }
+}

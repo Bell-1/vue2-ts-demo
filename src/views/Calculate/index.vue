@@ -7,7 +7,7 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator'
 
-import Calc from '@/components/Calc/Calc.vue'
+import Calc from '@/components/Calc/index.vue'
 
 @Component({
 	components: {
