@@ -21,9 +21,20 @@ Vue.use(globalComponents);
 Vue.config.productionTip = false
 Vue.prototype.$moment = moment;
 
+function removePageLoad() {
+	let loadWrap = document.getElementById("pageLoad")
+	console.log(loadWrap)
+	if (loadWrap) {
+		document.body.removeChild(loadWrap);
+	}
+}
+
 const app = new Vue({
 	router,
 	store,
+	mounted(){
+		removePageLoad();
+	},
 	render: h => h(App),
 });
 
