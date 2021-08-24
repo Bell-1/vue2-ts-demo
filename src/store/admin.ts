@@ -24,7 +24,6 @@ export default {
 	actions: {
 		async login({ commit, rootState }: any, data: any) {
 			let { http } = rootState;
-			console.log(http.getApi('login'))
 			const info = await rootState.http.request('login', data);
 			commit('setUserInfo', info);
 			return info

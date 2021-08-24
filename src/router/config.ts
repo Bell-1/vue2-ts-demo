@@ -5,19 +5,20 @@ export const menus: RouteConfig[] = [
 	{ path: '/app/home', component: getComponents('Home'), name: 'Home', meta: { icon: 'el-icon-s-home' } },
 	// { path: '/app/dashboard', component: getComponents('Dashboard'), name: 'Chart', meta: { icon: 'el-icon-s-marketing' } },
 	{
-		path: '/app/canvas', component: getComponents('Canvas'), name: 'Canvas', meta: { icon: 'el-icon-picture-outline}' },
+		path: '/app/canvas', component: getComponents('Canvas'), name: 'Canvas', meta: { icon: 'el-icon-edit-outline' },
 		children: [
-			{ path: '/app/canvas/draw', component: getComponents('Draw'), name: 'Draw', meta: { icon: 'el-icon-picture-outline' } },
-			{ path: '/app/canvas/star', component: getComponents('Star'), name: 'Star', meta: { icon: 'el-icon-picture-outline' } },
-			{ path: '/app/canvas/clip', component: getComponents('ClipTxt'), name: 'Clip', meta: { icon: 'el-icon-picture-outline' } },
-			{ path: '/app/canvas/Particle', component: getComponents('Particle'), name: 'Particle', meta: { icon: '' } },
+			{ path: '/app/canvas/gl', component: getComponents('WebGl'), name: 'WebGl', meta: { icon: '' } },
+			{ path: '/app/canvas/draw', component: getComponents('Draw'), name: 'Draw', meta: { icon: '' } },
+			{ path: '/app/canvas/star', component: getComponents('Star'), name: 'Star', meta: { icon: '' } },
+			{ path: '/app/canvas/clip', component: getComponents('ClipTxt'), name: 'Clip', meta: { icon: '' } },
+			{ path: '/app/canvas/Particle', component: getComponents('Particle'), name: 'Particle', meta: { icon: '' }},
 		]
 	},
 	{ path: '/app/reptile', component: getComponents('Reptile'), name: 'Reptile', meta: { icon: 'el-icon-attract' } },
 	{
-		path: '/app/ui', component: getComponents('UI'), name: 'UI', meta: { icon: 'iconfont icon-sheji}' },
+		path: '/app/ui', component: getComponents('UI'), name: 'UI', meta: { icon: 'el-icon-s-grid' },
 		children: [
-			{ path: '/app/ui/lock', component: getComponents('Lock'), name: 'Lock', meta: { icon: 'el-icon-alarm-clock' } },
+			{ path: '/app/ui/lock', component: getComponents('Lock'), name: 'Lock', meta: { icon: '' } },
 			{ path: '/app/ui/botton', component: getComponents('BBotton'), name: 'Button', meta: { icon: '' } },
 			{ path: '/app/ui/icon', component: getComponents('BIcon'), name: 'Icon', meta: { icon: '' } },
 			{ path: '/app/ui/Neumorphism', component: getComponents('Neumorphism'), name: 'Neumorphism', meta: { icon: '' } },
@@ -28,7 +29,7 @@ export const menus: RouteConfig[] = [
 	{ path: '/app/load', component: getComponents('BLoad'), name: 'Load', meta: { icon: 'el-icon-loading' } },
 	{ path: '/app/usermanage', component: getComponents('UserManage'), name: 'UserManage', meta: { icon: 'el-icon-user-solid' } },
 	{
-		path: '/app/mouseanimation', component: getComponents('MouseAnimation'), name: 'Mouse', meta: { icon: 'iconfont icon-mouse}' },
+		path: '/app/mouseanimation', component: getComponents('MouseAnimation'), name: 'Mouse', meta: { icon: 'el-icon-mouse' },
 		children: [
 			{ path: '/app/mouseanimation/Drag', component: getComponents('Drag'), name: 'Drag', meta: { icon: '' } },
 		]

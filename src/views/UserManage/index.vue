@@ -1,7 +1,7 @@
 <template>
 	<div class="user-manage" v-loading="loading">
 		<div class="create">
-			<el-button type="primary222" size="small" @click="handleCreate">新建用户</el-button>
+			<b-btn type="success" size="small" @click="handleCreate">新建用户</b-btn>
 		</div>
 		<div class="filter">
 			<el-form :model="condition" inline>
@@ -15,7 +15,7 @@
 					<el-input v-model="condition.email"></el-input>
 				</el-form-item>
 				<el-form-item>
-					<el-button type="primary" @click="handleSearch">search</el-button>
+					<b-btn type="primary" @click="handleSearch">search</b-btn>
 				</el-form-item>
 			</el-form>
 		</div>
@@ -26,8 +26,8 @@
 			<el-table-column label="性别" prop="genderStr"></el-table-column>
 			<el-table-column label="操作">
 				<template slot-scope="scope">
-					<el-button type="primary" size="mini" @click="handleEditUser(scope.row, scope.$index)">编辑</el-button>
-					<el-button type="danger" size="mini" @click="handleDelUser(scope.row, scope.$index)">删除</el-button>
+					<b-btn type="primary" size="mini" @click="handleEditUser(scope.row, scope.$index)">编辑</b-btn>
+					<b-btn type="danger" size="mini" @click="handleDelUser(scope.row, scope.$index)">删除</b-btn>
 				</template>
 			</el-table-column>
 		</el-table>

@@ -1,14 +1,19 @@
 .b-btn {
     display: inline-block;
     position: relative;
-    padding: 6px 15px;
+    padding: 12px 20px;
     overflow: hidden;
     font-size: 14px;
     border-radius: 6px;
-    border-color: transparent;
+    border: 1px solid transparent;
     box-sizing: border-box;
     cursor: pointer;
     transition: color 0.5s, background-color 0.5s;
+    line-height: 1;
+
+    &+.b-btn {
+        margin-left: 15px;
+    }
 
     &:not(.radius) i {
         margin-right: 6px;
@@ -30,7 +35,7 @@
     }
 
     &.b-btn-mini {
-        padding: 5px 10px;
+        padding: 7px 15px;
         font-size: 12px;
 
         &.radius {
@@ -40,8 +45,8 @@
     }
 
     &.b-btn-small {
-        padding: 4px 12px;
-        font-size: 13px;
+        padding: 9px 15px;
+        font-size: 12px;
 
         &.radius {
             width: 25px;
